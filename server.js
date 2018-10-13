@@ -1,4 +1,3 @@
-//npm extensions
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
@@ -46,7 +45,10 @@ db.sequelize.sync(syncOptions).then(function() {
 });
 
 module.exports = app;
+<<<<<<< HEAD
 
 // adding branch
 
 // test
+=======
+>>>>>>> 29b4d99557433092e8b6d053026d2eb352afc60c
