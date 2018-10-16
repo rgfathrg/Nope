@@ -1,0 +1,62 @@
+/*  ------------------ Landing Page  ------------------ */
+
+.jumbotron {
+    background-color: transparent !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    background: linear-gradient(10deg,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, .9))
+}
+.content {
+    width: 740px;
+    text-align: center;
+    margin: auto;
+    /* background-color: white; */
+    border-radius: 10px;
+    /* opacity: .8; */
+    height: 420px;
+    /* font-family: 'Merriweather', serif; */
+    /* font-family: 'Fjalla One', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+#title {
+    display: block;
+    text-align: center;
+    padding-top: 36px;
+    font-size: 120px;
+    color: bisque;
+    text-shadow: 1.5px 1.5px 1.5px black;
+    font-style: italic;
+    font-weight: 800;
+}
+.lead {
+    text-align: center;
+    color: bisque;
+    text-shadow: 1.5px 1.5px 1.5px black;
+    font-size: 35px;
+    font-weight: 900;
+}
+.buttons {
+    text-align: center;
+    
+}
+.landing-button {
+    padding: 20px !important;
+    margin: 20px 20px;
+    width: 300px;
+    color: bisque !important;
+    opacity: .9;
+
+}
+
+/* ------------------ End Landing Page ------------------ */
