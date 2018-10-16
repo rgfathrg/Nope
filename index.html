@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TESTgi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="survey">Name?</label>
+                <input type="text" class="form-control" id="name" placeholder="#">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="#">
+            </div>
+            <div class="form-group">
+                <label for="survey">Where ya headin'?</label>
+                <input type="text" class="form-control" id="destination" placeholder="#">
+            </div>
+            <div class="form-group">
+                <label for="passport">Do you have a passport?</label>
+                <select class="form-control" id="passport">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="survey">How much currency do you have to exchange?</label>
+                <input type="integer" class="form-control" id="currency" placeholder="#">
+            </div>
+            <div class="form-group">
+                <label for="information">Would you like information about-</label>
+                <select multiple class="form-control" id="information">
+                    <option>Events around your destination?</option>
+                    <option>Weather around your destination</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="travelpreference">Do you have a travel preference?</label>
+                <select multiple class="form-control" id="travelpreference">
+                    <option>Car?</option>
+                    <option>Plane?</option>
+                    <option>train?</option>
+                    <option>Boat?</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Additinal comments?</label>
+                <textarea class="form-control" id="comments" rows="3"></textarea>
+            </div>
+        </form>
+    </div>
+
 </body>
+
 </html>
