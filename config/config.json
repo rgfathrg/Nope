@@ -2,7 +2,11 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
     "database": "exampledb",
+=======
+    "database": "currency_db",
+>>>>>>> e77f7bebf40fe864b8fa66a203164ceb9c5d652f
     "host": "localhost",
     "dialect": "mysql"
   },
