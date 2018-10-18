@@ -14,16 +14,16 @@ module.exports = function (app) {
   app.get("/example", function (req, res) {
 
 
-    var weatherAPIKey = "f5f08ce79b534c1a907162145181310";
-    var queryUrl = "http://api.worldweatheronline.com/premium/v1/weather.ashx" + weatherAPIKey + "q=Charlotte";
+    // var weatherAPIKey = "f5f08ce79b534c1a907162145181310";
+    // var queryUrl = "http://api.worldweatheronline.com/premium/v1/weather.ashx" + weatherAPIKey + "q=Charlotte";
   
   
-    $.ajax({
-      url: queryUrl,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response);
-    });
+    // $.ajax({
+    //   url: queryUrl,
+    //   method: "GET"
+    // }).then(function (response) {
+    //   console.log(response);
+    // });
 
     db.Example.findAll({}).then(function (dbExample) {
       res.json(dbExample);
