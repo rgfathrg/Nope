@@ -1,6 +1,6 @@
 /*  ------------------ Landing Page  ------------------ */
 
-.jumbotron {
+.jumbotronLanding {
     background-color: transparent !important;
     position: absolute;
     top: 50%;
@@ -17,7 +17,7 @@
     min-height: 100%;
     background: linear-gradient(10deg,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, .9))
 }
-.content {
+.contentLanding {
     width: 740px;
     text-align: center;
     margin: auto;
@@ -29,7 +29,7 @@
     /* font-family: 'Fjalla One', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
-#title {
+#titleLanding {
     display: inline-block;
     text-align: center;
     padding-top: 36px;
@@ -45,7 +45,7 @@
     margin-left: 50px;
     margin-bottom: 68px;
 }
-.lead {
+.leadLanding {
     text-align: center;
     color: bisque;
     text-shadow: 1.5px 1.5px 1.5px black;
@@ -53,7 +53,7 @@
     font-weight: 900 !important;
     margin-top: 68px;
 }
-.buttons {
+.buttonsLanding {
     text-align: center;
     
 }
