@@ -1,0 +1,77 @@
+.list-group-item {
+    line-height: 2.5;
+}
+  
+.jumbotron {
+    background-image:url("images/travel.jpg");
+    height:400px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: white;
+    margin-bottom: 2rem;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.jumbotron-fluid{
+    padding-right: 0;
+    padding-left: 0;
+    border-radius:0;
+}
+
+.typewriter h1 {
+    overflow: hidden; 
+    border-right: .15em solid lightseagreen; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .25em; 
+    animation: 
+      typing 9.5s steps(80, end),
+      blink-caret .75s step-end infinite normal;
+}
+  
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: transparent }
+}
+
+h1{
+    font-family: 'Palanquin', sans-serif;
+    font-style: initial;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    text-transform: uppercase;
+    letter-spacing: 9px;
+    font-size: 4em;
+}
+
+.form-group input{
+    border: 3px solid lightseagreen;
+    outline: 0;
+}
+
+.form-group select{
+    border: 3px solid lightseagreen;
+    outline: 0;
+}
+
+.form-group textarea{
+    border: 3px solid lightseagreen;
+    outline: 0;
+}
+
+body{
+    text-transform: uppercase;
+    color: lightseagreen;
+    font-weight: bold;
+}
+
+button{
+    background-color: lightseagreen;
+    color: white;
+  }
