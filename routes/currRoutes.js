@@ -24,4 +24,5 @@ module.exports = function(app) {
       res.status().json;
     });
   });
+  app.get("/")
 };

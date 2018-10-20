@@ -23,6 +23,28 @@ const unsplash = new Unsplash({
   callbackUrl: "{CALLBACK_URL}"
 });
 
+//
+const authenticationUrl = unsplash.auth.getAuthenticationUrl([
+  "public",
+  "read_user",
+  "write_user",
+  "read_photos",
+  "write_photos"
+]);
+
+location.assign(authenticationUrl);
+
+unsplash.auth.userAuthentication(query.code)
+  .then(toJson)
+  .then(json => {
+    unsplash.auth.setBearerToken(json.access_token);
+});
+
+unsplash.search.photos(desResults, 1)
+  .then(toJson)
+  .then(json => {
+    console.log(json);
+  })
 unsplash.photos.getPhoto("mtNweauBsMQ", 1920, 1080, [0, 0, 1920, 1080])
   .then(toJson)
   .then(json => {
