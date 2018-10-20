@@ -18,9 +18,4 @@ function rate(rateVal) {
   console.log(rateVal);
   var amount = 100;
   console.log(amount * rateVal);
-  pageChange();
-}
-
-function pageChange() {
-  windows.location.href = "/destination";
 }
