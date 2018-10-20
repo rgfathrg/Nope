@@ -5,7 +5,7 @@ var country = "";
 $("#survey").on("click", function(event) {
   event.preventDefault();
   window.location.href = "/survey";
-})
+});
 
 $("#survey-btn").on("click", function(event) {
   event.preventDefault();
@@ -21,19 +21,10 @@ $("#survey-btn").on("click", function(event) {
 
 $("#currencyCalc").on("click", function(event) {
   event.preventDefault();
-  console.log("clicked");
   var usd = $("#usdcurr")
     .val()
     .trim();
-  console.log(usd);
   var rate = $("#tarRate").text();
-  console.log(rate);
   var convert = usd * rate;
-  console.log(convert.toFixed(2));
-  $("#fcurr").text(convert);
+  $("#fcurr").val(convert.toFixed(2));
 });
-
-// rateVal = parseFloat(rateVal.rate);
-//   console.log(rateVal);
-//   var amount = 100;
-//   console.log(amount * rateVal);
