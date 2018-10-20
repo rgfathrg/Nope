@@ -7,10 +7,11 @@ $("#survey-btn").on("click", function(event) {
   var ranCountry = Math.floor(Math.random() * countries.length);
   country = countries[ranCountry];
   console.log(country);
-  $.get("/api/Currencies/" + country, function(data) {
-    console.log(data.country, data.currency, data.rate);
-    rate(data);
-  });
+  window.location.href = "/destination/" + country;
+//   $.get("/destination/" + country, function(data) {
+//     console.log(data.country, data.currency, data.rate);
+//     rate(data);
+//   });
 });
 
 function rate(rateVal) {
