@@ -12,8 +12,13 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // Routes
+<<<<<<< HEAD
 //require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+=======
+require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
+>>>>>>> 8423766089690acba22feed4a33c686ec05a69d8
 require("./routes/currRoutes")(app);
 var syncOptions = { force: false };
 // If running a test, set syncOptions.force to true
