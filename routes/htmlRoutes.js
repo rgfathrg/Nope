@@ -17,13 +17,14 @@ module.exports = function(app) {
         country: req.params.country
       }
     }).then(function(result) {
-      console.log(result);
-      console.log(result.dataValues);
-      console.log(result.dataValues.currency);
+      var results = result.dataValues;
+      console.log(results);
       var hbsObject = {
-        country: result.dataValues.country,
-        currency: result.dataValues.currency
-      };
+        country: results.country,
+        currency: results.currency,
+        pair: results.pair,
+        rate: results.rate
+      }
       res.render("destination", hbsObject);
     });
   });
