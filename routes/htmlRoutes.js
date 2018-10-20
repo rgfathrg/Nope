@@ -1,29 +1,26 @@
 var path = require("path");
 var db = require("../models");
-
-
 module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../landing.html"));
   });
-  
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../survey.html"));
   });
-
   app.get("/destination/:country", function(req, res) {
     db.Currencies.findOne({
       where: {
         country: req.params.country
       }
     }).then(function(result) {
-      console.log(result);
-      console.log(result.dataValues);
-      console.log(result.dataValues.currency);
+      var results = result.dataValues;
+      console.log(results);
       var hbsObject = {
-        country: result.dataValues.country,
-        currency: result.dataValues.currency
-      };
+        country: results.country,
+        currency: results.currency,
+        pair: results.pair,
+        rate: results.rate
+      }
       res.render("destination", hbsObject);
     });
   });
