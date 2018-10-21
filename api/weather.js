@@ -37,22 +37,7 @@ $("#survey-btn").on("click", function (event) {
             high: highLow.mintempF
         }
 
-        //getting day of the week from date response....
-        var weekday = new Date(dayOne.date);
 
-        var daysofWeek = new Array(7);
-        daysofWeek[0] = "Sunday";
-        daysofWeek[1] = "Monday";
-        daysofWeek[2] = "Tuesday";
-        daysofWeek[3] = "Wednesday";
-        daysofWeek[4] = "Thursdady";
-        daysofWeek[5] = "Friday";
-        daysofWeek[6] = "Saturday";
-
-        var new_weekday = daysofWeek[weekday.getDay()];
-
-        //Sunday - Saturday : 0-6
-        console.log(new_weekday);
         // console.log(response);
         // console.log("It works, see... " + response.data.current_condition[0]);
 
@@ -67,7 +52,7 @@ $("#survey-btn").on("click", function (event) {
 
 
         //5 Day Weather Forecast....
-
+        //DAY ONE...
         var day1 = response.data.weather[1];
         var dayOne = {
             date: day1.date,
@@ -83,7 +68,25 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 1 Weather Icon Url: " + dayOne.weatherIconUrl); //weather icon image for day 1
         console.log("/////////////////////");
 
+        //calculating day of the week from date response....
+        var weekday = new Date(dayOne.date);
 
+        var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
+        daysofWeek[0] = "Sunday";
+        daysofWeek[1] = "Monday";
+        daysofWeek[2] = "Tuesday";
+        daysofWeek[3] = "Wednesday";
+        daysofWeek[4] = "Thursdady";
+        daysofWeek[5] = "Friday";
+        daysofWeek[6] = "Saturday";
+
+        var new_weekday = daysofWeek[weekday.getDay()];
+
+        
+        console.log(new_weekday);
+
+
+        //DAY TWO...
         var day2 = response.data.weather[2];
         var dayTwo = {
             date: day2.date,
@@ -99,7 +102,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 2 Weather Icon Url: " + dayTwo.weatherIconUrl); //weather icon image for day 2
         console.log("/////////////////////");
 
-
+        //DAY THREE...
         var day3 = response.data.weather[3];
         var dayThree = {
             date: day3.date,
@@ -115,7 +118,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 3 Weather Icon Url: " + dayThree.weatherIconUrl); //weather icon image for day 3
         console.log("/////////////////////");
 
-
+        //DAY FOUR...
         var day4 = response.data.weather[4];
         var dayFour = {
             date: day4.date,
@@ -131,6 +134,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 4 Weather Icon Url: " + dayFour.weatherIconUrl); //weather icon image for day 4
         console.log("/////////////////////");
 
+        //DAY FIVE...
         var day5 = response.data.weather[5];
         var dayFive = {
             date: day5.date,
@@ -160,13 +164,13 @@ $("#survey-btn").on("click", function (event) {
 
 
         //Responses to include on page: 
-        //1. city, country (not needed since it will at top of page (handled by dest.handlebars))
+        //1. city, country (not needed since it will be at the top of page (handled by dest.handlebars)
         //2. current temperature  = response.data.current_condition[0].tempF..see code below to add degree symbol
         //        <p>I will display &#8457;</p>  I will display ℉  - will need to add on handlebars page
         //        <p>I will display &#x2109;</p>  I will display ℉ - will need to add on handlebars page
         //3. weather desription = response.data.current_condition[0].weatherDesc[0].value
         //4. weather icon url = response.data.current_condition[0].weatherIconURL[0].value
-        //              
+        //              document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
         //5. mintemp = response.data.weather[0].mintempF
         //6  max temp = response.data.weather[0].maxtempF
         //7. Min/Max Temp  & weather descip, weather icon for next 5 days
