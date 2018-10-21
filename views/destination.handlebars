@@ -1,7 +1,7 @@
 <div class="container">
 
     <nav id="destNavBar" class="navbar navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="./index.html"><strong>Vecto</strong></a>
+        <a class="navbar-brand" href="/"><strong>Vecto</strong></a>
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <a class="nav-link" href="#navIndexDestination">Destination</a>
@@ -16,7 +16,7 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                     aria-expanded="false">More</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#navIndexCurrancy">Currancy</a>
+                    <a class="dropdown-item" href="#navIndexCurrancy">Currency</a>
                     <a class="dropdown-item" href="#navIndexPassVisa">Passport/Visa Info</a>
                     <a class="dropdown-item" href="#navIndexFacts">Destination Info</a>
                     <div role="separator" class="dropdown-divider"></div>
@@ -81,11 +81,21 @@
 
         <div class="jumbotron align-items-center" id="navIndexCurrancy">
             <hr>
-            <p><strong>CURRANCY API</strong></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias blanditiis ducimus commodi
-                consectetur quos laboriosam illum atque reprehenderit libero deserunt ipsa repellendus, rem debitis
-                officiis, in quisquam odit. Omnis deleniti illo dolorem incidunt. Error ipsam eius nulla. Asperiores,
-                placeat cumque autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?</p>
+            <p><strong>CURRENCY API</strong></p>
+            <p>{{pair}} : <span id="tarRate">{{rate}}</span></p>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">USD</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="usdcurr">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">{{currency}}</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="fcurr">
+            </div>
+            <button class="btn btn-primary" type="submit" id="currencyCalc">Button</button>
             <hr>
         </div>
 
