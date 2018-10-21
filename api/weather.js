@@ -1,10 +1,12 @@
 $("#survey-btn").on("click", function (event) {
 
     event.preventDefault();
-    // var rec_country = "country.countryName";
-    // var rec_city =  "country.cityName";
-    var rec_country = "Brazil";
-    var rec_city = "Rio de Janeiro";
+    // var rec_city =  "country.cityName"; - will select from places object
+    // var rec_country = "country.countryName"; - will select from places object
+    
+    var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works propertly
+    var rec_country = "Brazil"; //recommended country - testing to make sure the rest of the code works properly
+    
 
     if (rec_city.includes(" ")) {
 
@@ -43,16 +45,18 @@ $("#survey-btn").on("click", function (event) {
 
         console.log("Current Temperature: " + currentDay.currentTemp); //current temperature...
         console.log("Current Weather Condition: " + currentDay.weatherDesc); //current weather description...
-        console.log("Weather Icon URL: " + currentDay.weatherIconUrl); //weather icon image
+        console.log("Weather Icon URL: " + currentDay.weatherIconUrl); //current weather icon image
         console.log("Today's Low: " + currentDay.low); //lowest temperature for the current day
         console.log("Today's High: " + currentDay.high); //highest temperature for the current day
         console.log("/////////////////////");
 
+        //display weather image on webpage..
         document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
 
 
-        //5 Day Weather Forecast....
-        //DAY ONE...
+        //                   ********** 5 Day Weather Forecast *********** 
+
+        //DAY ONE response data...
         var day1 = response.data.weather[1];
         var dayOne = {
             date: day1.date,
@@ -81,12 +85,10 @@ $("#survey-btn").on("click", function (event) {
         daysofWeek[6] = "Saturday";
 
         var new_weekday = daysofWeek[weekday.getDay()];
-
-        
         console.log(new_weekday);
 
 
-        //DAY TWO...
+        //DAY TWO response data...
         var day2 = response.data.weather[2];
         var dayTwo = {
             date: day2.date,
@@ -102,7 +104,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 2 Weather Icon Url: " + dayTwo.weatherIconUrl); //weather icon image for day 2
         console.log("/////////////////////");
 
-        //DAY THREE...
+        //DAY THREE response data...
         var day3 = response.data.weather[3];
         var dayThree = {
             date: day3.date,
@@ -118,7 +120,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 3 Weather Icon Url: " + dayThree.weatherIconUrl); //weather icon image for day 3
         console.log("/////////////////////");
 
-        //DAY FOUR...
+        //DAY FOUR response data...
         var day4 = response.data.weather[4];
         var dayFour = {
             date: day4.date,
@@ -134,7 +136,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 4 Weather Icon Url: " + dayFour.weatherIconUrl); //weather icon image for day 4
         console.log("/////////////////////");
 
-        //DAY FIVE...
+        //DAY FIVE response data...
         var day5 = response.data.weather[5];
         var dayFive = {
             date: day5.date,
@@ -152,6 +154,7 @@ $("#survey-btn").on("click", function (event) {
 
 
 
+//                       ********** STEP FOR MAKE WEATHER API CALL **********
 
         //1. reference the destination object
         //2. slice the destination object/array so that only the county name and city are left and set equal to new_var_name
