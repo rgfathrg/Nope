@@ -9,11 +9,15 @@ function popData() {
             console.log(data);
             var list = `<ul>
                         <li>Capital: ${data.capital}</li>
+                        <li>Background: ${data.background}</li>
                         <li>Time Difference: ${data.timeDifference}</li>
                         <li>Population: ${data.population}</li>
                         <li>Ethnicities: ${data.ethnicity}</li>
                         <li>International Disputes: ${data.concerns}</li>
                         <li>Infection Risk: ${data.diseases}</li>
+                        <li>Diesease Transmitted by Food/Water: ${data.foodWater}</li>
+                        <li>Insect Transmitted Diseases: ${data.vBourne}</li>
+                        <li>Other Cautions: ${data.note}</li>
                         </ul>`;
             $("#worldFacts").append(list);
         }
@@ -27,10 +31,10 @@ $.get(
 ).then(function (data) {
     var degree =
         "At this time none at sufficient levels or seriousness to report";
-    var fwBourne = "N/A";
+    var fwBourne = "At this time none are reported";
     var issue = "N/A";
-    var note = "N/A";
-    var vBourne = "N/A";
+    var note = "At this time none are reported";
+    var vBourne = "At this time none are reported";
 
     if (
         JSON.parse(data)["People and Society"]["Major infectious diseases"] !==
@@ -77,6 +81,7 @@ $.get(
         name: JSON.parse(data).Government["Country name"]["conventional short form"]
             .text,
         capital: JSON.parse(data).Government.Capital.name.text,
+        background: JSON.parse(data).Introduction.Background.text,
         timeDifference: JSON.parse(data).Government.Capital["time difference"].text,
         population: JSON.parse(data)["People and Society"].Population.text,
         ethnicity: JSON.parse(data)["People and Society"]["Ethnic groups"].text,
@@ -95,7 +100,7 @@ $.get(
         "================================================================================="
     );
 });
-$.get('https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ke.json').then(function (data) {
+$.get('https://raw.githubusercontent.com/factbook/factbook.json/master/africa/mo.json').then(function (data) {
     var degree = "At this time none at sufficient levels or seriousness to report";
     var fwBourne = "N/A";
     var issue = "N/A";
@@ -120,6 +125,7 @@ $.get('https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ke
     var countryData = {
         name: JSON.parse(data).Government["Country name"]["conventional short form"].text,
         capital: JSON.parse(data).Government.Capital.name.text,
+        background: JSON.parse(data).Introduction.Background.text,
         timeDifference: JSON.parse(data).Government.Capital["time difference"].text,
         population: JSON.parse(data)["People and Society"].Population.text,
         ethnicity: JSON.parse(data)["People and Society"]["Ethnic groups"].text,
@@ -159,6 +165,7 @@ $.get('https://raw.githubusercontent.com/factbook/factbook.json/master/south-ame
     var countryData = {
         name: JSON.parse(data).Government["Country name"]["conventional short form"].text,
         capital: JSON.parse(data).Government.Capital.name.text,
+        background: JSON.parse(data).Introduction.Background.text,
         timeDifference: JSON.parse(data).Government.Capital["time difference"].text,
         population: JSON.parse(data)["People and Society"].Population.text,
         ethnicity: JSON.parse(data)["People and Society"]["Ethnic groups"].text,
@@ -198,6 +205,7 @@ $.get('https://raw.githubusercontent.com/factbook/factbook.json/master/australia
     var countryData = {
         name: JSON.parse(data).Government["Country name"]["conventional short form"].text,
         capital: JSON.parse(data).Government.Capital.name.text,
+        background: JSON.parse(data).Introduction["Background"].text,
         timeDifference: JSON.parse(data).Government.Capital["time difference"].text,
         population: JSON.parse(data)["People and Society"].Population.text,
         ethnicity: JSON.parse(data)["People and Society"]["Ethnic groups"].text,
@@ -237,6 +245,7 @@ $.get('https://raw.githubusercontent.com/factbook/factbook.json/master/europe/ic
     var countryData = {
         name: JSON.parse(data).Government["Country name"]["conventional short form"].text,
         capital: JSON.parse(data).Government.Capital.name.text,
+        background: JSON.parse(data).Introduction.Background.text,
         timeDifference: JSON.parse(data).Government.Capital["time difference"].text,
         population: JSON.parse(data)["People and Society"].Population.text,
         ethnicity: JSON.parse(data)["People and Society"]["Ethnic groups"].text,

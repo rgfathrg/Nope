@@ -3,7 +3,7 @@
 // $.post("/", function(req, res) {
 //   res.status().json;
 // });
-var countries = ["BRAZIL", "KENYA", "AUSTRALIA", "ICELAND", "PERU"];
+var countries = ["BRAZIL", "MOROCCO", "AUSTRALIA", "ICELAND", "PERU"];
 var country = "";
 //Arrary to collect factbook data as objects
 
