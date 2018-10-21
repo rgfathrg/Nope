@@ -1,6 +1,12 @@
 // var currencyLayer = require("../api/curreny-layer");
+//post to pull up-to-date currency rates
+// $.post("/", function(req, res) {
+//   res.status().json;
+// });
 var countries = ["FRANCE", "BRAZIL", "KENYA", "AUSTRALIA", "ICE LAND", "PERU"];
 var country = "";
+//Arrary to collect factbook data as objects
+var countries = [];
 
 $("#survey").on("click", function(event) {
   event.preventDefault();
@@ -15,10 +21,6 @@ $("#survey-btn").on("click", function(event) {
   window.location.href = "/destination/" + country;
 });
 
-// $.post("/", function(req, res) {
-//   res.status().json;
-// });
-
 $("#currencyCalc").on("click", function(event) {
   event.preventDefault();
   var usd = $("#usdcurr")
@@ -29,7 +31,6 @@ $("#currencyCalc").on("click", function(event) {
   $("#fcurr").val(convert.toFixed(2));
 });
 
-var countries = [];
 $.get(
   "https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/br.json"
 ).then(function(data) {
