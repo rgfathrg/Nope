@@ -37,7 +37,22 @@ $("#survey-btn").on("click", function (event) {
             high: highLow.mintempF
         }
 
+        //getting day of the week from date response....
+        var weekday = new Date(dayOne.date);
 
+        var daysofWeek = new Array(7);
+        daysofWeek[0] = "Sunday";
+        daysofWeek[1] = "Monday";
+        daysofWeek[2] = "Tuesday";
+        daysofWeek[3] = "Wednesday";
+        daysofWeek[4] = "Thursdady";
+        daysofWeek[5] = "Friday";
+        daysofWeek[6] = "Saturday";
+
+        var new_weekday = daysofWeek[weekday.getDay()];
+
+        //Sunday - Saturday : 0-6
+        console.log(new_weekday);
         // console.log(response);
         // console.log("It works, see... " + response.data.current_condition[0]);
 
