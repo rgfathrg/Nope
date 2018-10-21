@@ -73,8 +73,14 @@
             <hr>
             <p><strong>WEATHER API</strong></p>
             <p>Current Weather</p>
-
-            {}
+            <div id="icon"></div>
+            {{#each currentDay}}
+            {{!-- <p>{{ weatherIconUrl }}</p> --}}
+            <p>Current Temperature: {{ currentTemp }}F&#8457;</p>
+            <p>{{ weatherDesc }}</p>
+            <p>{{ low }}F&#8457; / {{ high }}F&#8457;</p>
+            <hr>
+            {{/each}}
             <hr>
         </div>
 
@@ -86,13 +92,15 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">USD</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="usdcurr">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                    id="usdcurr">
             </div>
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">{{currency}}</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="fcurr">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                    id="fcurr">
             </div>
             <button class="btn btn-primary" type="submit" id="currencyCalc">Button</button>
             <hr>

@@ -3,16 +3,18 @@ $("#survey-btn").on("click", function (event) {
     event.preventDefault();
     // var rec_country = "country.countryName";
     // var rec_city =  "country.cityName";
-    const rec_country = "Brazil";
-    const rec_city = "Rio de Janeiro";
+    var rec_country = "Brazil";
+    var rec_city = "Rio de Janeiro";
 
     if (rec_city.includes(" ")) {
 
         rec_city = rec_city.split(" ").join("+");
+        console.log(rec_city);
     }
 
     var Destination = new Array(rec_city, rec_country);
-    var newDest = Destination.join(" ");
+    var newDest = Destination.join(",");
+    console.log(newDest);
 
     var weatherAPIKey = "f5f08ce79b534c1a907162145181310";
     var queryURL = "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=" + weatherAPIKey + "&q=" + newDest + "&format=JSON";
@@ -23,105 +25,113 @@ $("#survey-btn").on("click", function (event) {
         method: "GET"
     }).then(function (response) {
 
+        console.log(response);
+
         var currentInfo = response.data.current_condition[0];
         var highLow = response.data.weather[0];
-        var currentDay =  {
-            currentTemp: currentInfo.tempF,
+        var currentDay = {
+            currentTemp: currentInfo.temp_F,
             weatherDesc: currentInfo.weatherDesc[0].value,
-            weatherIconUrl: day1.hourly[4].weatherIconUrl[0].value,
+            weatherIconUrl: currentInfo.weatherIconUrl[0].value,
             low: highLow.mintempF,
             high: highLow.mintempF
         }
 
-        console.log(response);
+
+        // console.log(response);
         // console.log("It works, see... " + response.data.current_condition[0]);
 
-        console.log("Current Temperature: " + currentInfo.tempF); //current temperature...
-        console.log("Current Weather Condition: " + currentInfo.weatherDesc[0].value); //current weather description...
-        console.log("Weather Icon URL: " + currentInfo.weatherIconUrl[0].value); //weather icon image
-        console.log("Today's Low: " + highLow.mintempF); //lowest temperature for the current day
-        console.log("Today's High: " + highLow.maxtempF); //highest temperature for the current day
+        console.log("Current Temperature: " + currentDay.currentTemp); //current temperature...
+        console.log("Current Weather Condition: " + currentDay.weatherDesc); //current weather description...
+        console.log("Weather Icon URL: " + currentDay.weatherIconUrl); //weather icon image
+        console.log("Today's Low: " + currentDay.low); //lowest temperature for the current day
+        console.log("Today's High: " + currentDay.high); //highest temperature for the current day
         console.log("/////////////////////");
+
+        document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
+
+
         //5 Day Weather Forecast....
 
         var day1 = response.data.weather[1];
         var dayOne = {
-            date: day1.data,
+            date: day1.date,
             minTemp: day1.mintempF,
-            maxtemp: day1.maxtempF,
+            maxTemp: day1.maxtempF,
             weatherDesc: day1.hourly[4].weatherDesc[0].value,
             weatherIconUrl: day1.hourly[4].weatherIconUrl[0].value
         }
-        console.log(day1.date); //date to convert to day-of-the-week
-        console.log("Day 1 Low: " + day1.mintempF); //lowest temperature for day 1
-        console.log("Day 1 High: " + day1.maxtempF); //highest temperature for day1
-        console.log("Day 1 Weather Condition: " + day1.hourly[4].weatherDesc[0].value); //weather description for day 1
-        console.log("Day 1 Weather Icon Url: " + day1.hourly[4].weatherIconUrl[0].value); //weather icon image for day 1
+        console.log(dayOne.date); //date to convert to day-of-the-week
+        console.log("Day 1 Low: " + dayOne.minTemp); //lowest temperature for day 1
+        console.log("Day 1 High: " + dayOne.maxTemp); //highest temperature for day1
+        console.log("Day 1 Weather Condition: " + dayOne.weatherDesc); //weather description for day 1
+        console.log("Day 1 Weather Icon Url: " + dayOne.weatherIconUrl); //weather icon image for day 1
         console.log("/////////////////////");
 
 
         var day2 = response.data.weather[2];
         var dayTwo = {
-            date: day2.data,
+            date: day2.date,
             minTemp: day2.mintempF,
-            maxtemp: day2.maxtempF,
+            maxTemp: day2.maxtempF,
             weatherDesc: day2.hourly[4].weatherDesc[0].value,
             weatherIconUrl: day2.hourly[4].weatherIconUrl[0].value
         }
-        console.log(day2.date) //date to convert to day-of-the-week
-        console.log("Day 2 Low: " + day2.mintempF); //lowest temperature for day 2
-        console.log("Day 2 High: " + day2.maxtempF); //highest temperature for day 2 
-        console.log("Day 2 Weather Condition: " + day2.hourly[4].weatherDesc[0].value); //weather description for day 2
-        console.log("Day 2 Weather Icon Url: " + day2.hourly[4].weatherIconUrl[0].value); //weather icon image for day 2
+        console.log(dayTwo.date) //date to convert to day-of-the-week
+        console.log("Day 2 Low: " + dayTwo.minTemp); //lowest temperature for day 2
+        console.log("Day 2 High: " + dayTwo.maxTemp); //highest temperature for day 2 
+        console.log("Day 2 Weather Condition: " + dayTwo.weatherDesc); //weather description for day 2
+        console.log("Day 2 Weather Icon Url: " + dayTwo.weatherIconUrl); //weather icon image for day 2
         console.log("/////////////////////");
 
 
         var day3 = response.data.weather[3];
         var dayThree = {
-            date: day3.data,
+            date: day3.date,
             minTemp: day3.mintempF,
-            maxtemp: day3.maxtempF,
+            maxTemp: day3.maxtempF,
             weatherDesc: day3.hourly[4].weatherDesc[0].value,
             weatherIconUrl: day3.hourly[4].weatherIconUrl[0].value
         }
-        console.log(day3.date) //date to convert to day-of-the-week
-        console.log("Day 3 Low: " + day3.mintempF); //lowest temperature for day 3
-        console.log("Day 3 High: " + day3.maxtempF); //highest temperature for day 3
-        console.log("Day 3 Weather Condition: " + day3.hourly[4].weatherDesc[0].value); //weather description for day 3
-        console.log("Day 3 Weather Icon Url: " + day3.hourly[4].weatherIconUrl[0].value); //weather icon image for day 3
+        console.log(dayThree.date) //date to convert to day-of-the-week
+        console.log("Day 3 Low: " + dayThree.minTemp); //lowest temperature for day 3
+        console.log("Day 3 High: " + dayThree.maxTemp); //highest temperature for day 3
+        console.log("Day 3 Weather Condition: " + dayThree.weatherDesc); //weather description for day 3
+        console.log("Day 3 Weather Icon Url: " + dayThree.weatherIconUrl); //weather icon image for day 3
         console.log("/////////////////////");
 
 
         var day4 = response.data.weather[4];
         var dayFour = {
-            date: day4.data,
+            date: day4.date,
             minTemp: day4.mintempF,
-            maxtemp: day4.maxtempF,
+            maxTemp: day4.maxtempF,
             weatherDesc: day4.hourly[4].weatherDesc[0].value,
             weatherIconUrl: day4.hourly[4].weatherIconUrl[0].value
         }
-        console.log(day4.date) //date to convert to day-of-the-week
-        console.log("Day 4 Low: " + day4.mintempF); //lowest temperature for day 4
-        console.log("Day 4 High: " + day4.maxtempF); //highest temperature for day 4
-        console.log("Day 4 Weather Condition: " + day4.hourly[4].weatherDesc[0].value); //weather description for day 4
-        console.log("Day 4 Weather Icon Url: " + day4.hourly[4].weatherIconUrl[0].value); //weather icon image for day 4
+        console.log(dayFour.date) //date to convert to day-of-the-week
+        console.log("Day 4 Low: " + dayFour.minTemp); //lowest temperature for day 4
+        console.log("Day 4 High: " + dayFour.maxTemp); //highest temperature for day 4
+        console.log("Day 4 Weather Condition: " + dayFour.weatherDesc); //weather description for day 4
+        console.log("Day 4 Weather Icon Url: " + dayFour.weatherIconUrl); //weather icon image for day 4
         console.log("/////////////////////");
 
         var day5 = response.data.weather[5];
         var dayFive = {
-            date: day5.data,
+            date: day5.date,
             minTemp: day5.mintempF,
-            maxtemp: day5.maxtempF,
+            maxTemp: day5.maxtempF,
             weatherDesc: day5.hourly[4].weatherDesc[0].value,
             weatherIconUrl: day5.hourly[4].weatherIconUrl[0].value
         }
-        console.log(day5.date) //date to convert to day-of-the-week
-        console.log("Day 5 Low: " + day5.mintempF); //lowest tempertaure for day 5
-        console.log("Day 5 High: " + day5.maxtempF); //highest temperature for day 5
-        console.log("Day 5 Weather Condition: " + day5.hourly[4].weatherDesc[0].value); //weather description for day 5
-        console.log("Day 5 Weather Icon Url: " + day5.hourly[4].weatherIconUrl[0].value); //weather icon image for day 5
+        console.log(dayFive.date) //date to convert to day-of-the-week
+        console.log("Day 5 Low: " + dayFive.minTemp); //lowest tempertaure for day 5
+        console.log("Day 5 High: " + dayFive.maxTemp); //highest temperature for day 5
+        console.log("Day 5 Weather Condition: " + dayFive.weatherDesc); //weather description for day 5
+        console.log("Day 5 Weather Icon Url: " + dayFive.weatherIconUrl); //weather icon image for day 5
 
-        
+
+
 
 
         //1. reference the destination object
@@ -141,7 +151,7 @@ $("#survey-btn").on("click", function (event) {
         //        <p>I will display &#x2109;</p>  I will display ℉ - will need to add on handlebars page
         //3. weather desription = response.data.current_condition[0].weatherDesc[0].value
         //4. weather icon url = response.data.current_condition[0].weatherIconURL[0].value
-        //              dq
+        //              
         //5. mintemp = response.data.weather[0].mintempF
         //6  max temp = response.data.weather[0].maxtempF
         //7. Min/Max Temp  & weather descip, weather icon for next 5 days
