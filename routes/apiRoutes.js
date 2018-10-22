@@ -22,3 +22,37 @@ module.exports = function(app) {
     });
   });
 };
+
+let destRes = "";
+const places = {
+  brazil : {
+    country: "Brazil",
+    city: "Rio de Janeiro",
+    // picSrc: [url1, url2, url3],
+    alpha2: "BR"
+  },
+  france : {
+    country: "France",
+    city: "Paris",
+    // picSrc: [url1, url2, url3],
+    alpha2: "FR"
+  },
+  peru : {
+    country: "Peru",
+    city: "Machu Picchu",
+    // picSrc: [url1, url2, url3],
+    alpha2: "BR"
+  },
+  australia : {
+    country: "Australia",
+    city: "Sydney",
+    // picSrc: [url1, url2, url3],
+    alpha2: "AU"
+  },
+  iceland : {
+    country: "Iceland",
+    city: "Reykjavik",
+    // picSrc: [url1, url2, url3],
+    alpha2: "BR"
+  }
+}
