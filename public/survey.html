@@ -86,7 +86,6 @@
     <script>
         $("#submitbtn").on("click", event => {
             event.preventDefault();
-            
 
             function showValues() {
                 var str = $("form").serialize();
@@ -94,6 +93,8 @@
             };
             $("#submitbtn").on("click", showValues);
             showValues();
+        });
+
     </script>
 
 </body>
