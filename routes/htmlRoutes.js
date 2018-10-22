@@ -1,27 +1,30 @@
+var path = require("path");
 var db = require("../models");
 
+
 module.exports = function(app) {
-  // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.sendFile(path.join(__dirname, "../landing.html"));
+  });
+  
+  app.get("/survey", function(req, res) {
+    res.sendFile(path.join(__dirname, "../survey.html"));
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
+  app.get("/destination/:country", function(req, res) {
+    db.Currencies.findOne({
+      where: {
+        country: req.params.country
+      }
+    }).then(function(result) {
+      console.log(result);
+      console.log(result.dataValues);
+      console.log(result.dataValues.currency);
+      var hbsObject = {
+        country: result.dataValues.country,
+        currency: result.dataValues.currency
+      };
+      res.render("destination", hbsObject);
     });
-  });
-
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
   });
 };
