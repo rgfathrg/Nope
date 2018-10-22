@@ -72,10 +72,15 @@
         <div class="jumbotron align-items-center" id="navIndexWeather">
             <hr>
             <p><strong>WEATHER API</strong></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias blanditiis ducimus commodi
-                consectetur quos laboriosam illum atque reprehenderit libero deserunt ipsa repellendus, rem debitis
-                officiis, in quisquam odit. Omnis deleniti illo dolorem incidunt. Error ipsam eius nulla. Asperiores,
-                placeat cumque autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?</p>
+            <p>Current Weather</p>
+            <div id="icon"></div>
+            {{#each currentDay}}
+            {{!-- <p>{{ weatherIconUrl }}</p> --}}
+            <p>Current Temperature: {{ currentTemp }}&#8457;</p>
+            <p>{{ weatherDesc }}</p>
+            <p>Low {{ low }}&#8457; / High {{ high }}&#8457;</p>
+            <hr>
+            {{/each}}
             <hr>
         </div>
 
@@ -87,13 +92,15 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">USD</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="usdcurr">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                    id="usdcurr">
             </div>
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">{{currency}}</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="fcurr">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                    id="fcurr">
             </div>
             <button class="btn btn-primary" type="submit" id="currencyCalc">Button</button>
             <hr>
@@ -135,3 +142,4 @@
 </div>
 <script text="text/javascript" src="../js/currLogic.js"></script>
 <script text="text/javascript" src="../js/worldFact.js"></script>
+<script text="text/javascript"  src="../api/weather.js"></script>

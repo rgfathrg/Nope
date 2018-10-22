@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "Cmd32390!",
     "database": "currency_db",
     "host": "localhost",
     "dialect": "mysql"
