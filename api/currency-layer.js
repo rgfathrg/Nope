@@ -29,20 +29,5 @@ module.exports = {
         console.log(err);
         cb(500);
       });
-  },
-  findRate: function(app, cb) {
-    db.Currencies.findOne({
-      where: {
-        country: "BRAZIL"
-      },
-      attributes: ["id", ["currency", "currency"], ["rate", "rate"]]
-    })
-      .then(function(dbCurrencies) {
-        cb(200, dbCurrencies);
-      })
-      .catch(function(err) {
-        console.log(err);
-        cb(500);
-      });
   }
 };
