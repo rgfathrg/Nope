@@ -1,6 +1,11 @@
 // var currencyLayer = require("../api/curreny-layer");
-var countries = ["RUSSIA", "BRAZIL", "KENYA", "AUSTRALIA", "CHILE", "BELIZE"];
+//post to pull up-to-date currency rates
+// $.post("/", function(req, res) {
+//   res.status().json;
+// });
+var countries = ["BRAZIL", "MOROCCO", "AUSTRALIA", "ICELAND", "PERU"];
 var country = "";
+//Arrary to collect factbook data as objects
 
 $("#survey").on("click", function(event) {
   event.preventDefault();
@@ -14,10 +19,6 @@ $("#survey-btn").on("click", function(event) {
   console.log(country);
   window.location.href = "/destination/" + country;
 });
-
-// $.post("/", function(req, res) {
-//   res.status().json;
-// });
 
 $("#currencyCalc").on("click", function(event) {
   event.preventDefault();
