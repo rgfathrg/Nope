@@ -3,20 +3,21 @@ $("#survey-btn").on("click", function (event) {
     event.preventDefault();
     // var rec_city =  "country.cityName"; - will select from places object
     // var rec_country = "country.countryName"; - will select from places object
-    
+
     var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works propertly
     var rec_country = "Brazil"; //recommended country - testing to make sure the rest of the code works properly
-    
+
 
     if (rec_city.includes(" ")) {
 
         rec_city = rec_city.split(" ").join("+");
         console.log(rec_city);
-        //adjusting name of the city so it will have the correct format for the ajax call
+        //adjusting name of the city so it will have the correct format for the ajax call in the event the city name contains more than one word
     }
 
     var Destination = new Array(rec_city, rec_country);
     var newDest = Destination.join(",");
+    //joining the city name and country with "," so the ajax call can be performed with the correct syntax
     console.log(newDest);
 
     var weatherAPIKey = "f5f08ce79b534c1a907162145181310";
@@ -42,7 +43,7 @@ $("#survey-btn").on("click", function (event) {
 
 
         // console.log(response);
-        // console.log("It works, see... " + response.data.current_condition[0]);
+        // console.log("It works... " + response.data.current_condition[0]);
 
         console.log("Current Temperature: " + currentDay.currentTemp); //current temperature...
         console.log("Current Weather Condition: " + currentDay.weatherDesc); //current weather description...
@@ -155,20 +156,20 @@ $("#survey-btn").on("click", function (event) {
 
 
 
-//                       ********** STEP FOR MAKE WEATHER API CALL **********
+        //                       ********** STEP FOR MAKING WEATHER API CALL **********
 
-        //1. reference the destination object
-        //2. slice the destination object/array so that only the county name and city are left and set equal to new_var_name
+        //1. Reference the destination object
+        //2. Slice the destination object/array so that only the county name and city are left and set equal to new_var_name
         //.....nameOfArray.prototype.slice(-1)  - use negative to slice off the end of the array
-        //...check to see if city name includes space(s) i.e. more than one word, city.includes(" ");
+        //...Check to see if city name includes space(s) i.e. more than one word, city.includes(" ");
         //.....if city name is > 1 word, will need to separate each word and rejoin them with (+);
         //3. need to join the new City name (if amended) and county using (,), arrayName.join(" ");
         //......either combine 2 & 3 on the same variable or create a new variable for step 3
-        //4. make ajax call using the variable where the city and country have been joined (city,country)
+        //4. Make ajax call using the variable where the city and country have been joined (city,country)
 
 
         //Responses to include on page: 
-        //1. city, country (not needed since it will be at the top of page (handled by dest.handlebars)
+        //1. City, Country (not needed since it will be at the top of page (handled by dest.handlebars)
         //2. current temperature  = response.data.current_condition[0].tempF..see code below to add degree symbol
         //        <p>I will display &#8457;</p>  I will display ℉  - will need to add on handlebars page
         //        <p>I will display &#x2109;</p>  I will display ℉ - will need to add on handlebars page
