@@ -24,11 +24,11 @@
         <form>
             <div class="form-group">
                 <label for="survey">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="text">
+                <input type="text" class="form-control" id="name" placeholder="Enter Name">
             </div>
     <div class="form-group">
         <label for="email">Email Address</label>
-            <input type="email" class="form-control" id="email" placeholder="text">
+            <input type="email" class="form-control" id="email" placeholder="Enter Email">
     </div>
     <div class="form-group">
         <label for="passport">What kind of weather do you prefer?</label>
@@ -60,19 +60,30 @@
     </div>
     <div class="form-group">
             <label for="survey">How much currency do you have to exchange?</label>
-                <input type="integer" class="form-control" id="currency" placeholder="text">
+                <input type="integer" class="form-control" id="currency" placeholder="Enter Amount">
     </div>
     <div class="form-group">
         <label for="information">What kind of information would you like?</label>
-            <select multiple class="form-control" id="information">
-                <option>Events around your destination</option>
-                <option>Weather around your destination</option>
-                <option>Passport and Visa requirements</option>
-                <option>Facts about your destination</option>
-            </select>
+        <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                <label class="form-check-label" for="exampleRadios1"> Weather around your destination</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option2" aria-label="...">
+                <label class="form-check-label" for="exampleRadios2">Passport and Visa requirements</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option3" aria-label="...">
+                <label class="form-check-label" for="exampleRadios3">Facts about your destination</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option4" aria-label="...">
+                <label class="form-check-label" for="exampleRadios4">Currency Exchange Information</label>
+            </div>
+        </div>
     </div>
     <div class="form-group">
-        <label for="comments">Additional comments?</label>
+        <label for="comments" id="addedComments">Additional comments?</label>
             <textarea class="form-control" id="comments" rows="3"></textarea>
     </div> 
             <button type="button" class="btn btn btn-lg btn-block" id="survey-btn">Submit</button>
