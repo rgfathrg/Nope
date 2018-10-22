@@ -12,6 +12,7 @@ $("#survey-btn").on("click", function (event) {
 
         rec_city = rec_city.split(" ").join("+");
         console.log(rec_city);
+        //adjusting name of the city so it will have the correct format for the ajax call
     }
 
     var Destination = new Array(rec_city, rec_country);
