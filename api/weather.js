@@ -1,11 +1,40 @@
+var currLogic = import("../public/js/currLogic");
+
 $("#survey-btn").on("click", function (event) {
 
     event.preventDefault();
+
+    var rec_country = country;
+    var rec_city = "";
     // var rec_city =  "country.cityName"; - will select from places object
     // var rec_country = "country.countryName"; - will select from places object
+    switch (rec_country) {
 
-    var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works propertly
-    var rec_country = "Brazil"; //recommended country - testing to make sure the rest of the code works properly
+        case "BRAZIL":
+            rec_city = "Rio de Janeir0";
+            break;
+
+        case "PERU":
+            rec_city = "Machu Picchu";
+            break;
+
+        case "FRANCE":
+            rec_city = "Paris";
+            break;
+
+        case "AUSTRAILA":
+            rec_city = "Sydney";
+            break;
+
+        case "ICELAND":
+            rec_city = "Reykjavik";
+            break;
+    }
+
+    // var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works properly
+
+
+    // "Brazil"; //recommended country - testing to make sure the rest of the code works properly
 
 
     if (rec_city.includes(" ")) {
@@ -184,3 +213,6 @@ $("#survey-btn").on("click", function (event) {
     });
 
 });
+
+
+// module.exports = currLogic;
