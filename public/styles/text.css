@@ -3,7 +3,7 @@
 }
   
 .jumbotron {
-    background-image:url("images/travel.jpg");
+    background-image:url("images/travel2.jpg");
     height:400px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -39,10 +39,19 @@
     50% { border-color: transparent }
 }
 
+#comments {
+    width:  90%;
+    margin:  auto;
+}
+
+#addedComments {
+    margin-left: 5%;
+}
+
 h1{
     font-family: 'Palanquin', sans-serif;
     font-style: initial;
-    color: white;
+    color: lightseagreen;
     text-align: center;
     margin: 10px;
     text-transform: uppercase;

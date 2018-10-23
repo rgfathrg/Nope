@@ -3,16 +3,24 @@
 // $.post("/", function(req, res) {
 //   res.status().json;
 // });
-var countries = ["BRAZIL", "MOROCCO", "AUSTRALIA", "ICELAND", "PERU"];
+var countries = ["BRAZIL", "FRANCE", "AUSTRALIA", "ICELAND", "PERU"];
 var country = "";
 //Arrary to collect factbook data as objects
 
 $("#survey").on("click", function(event) {
   event.preventDefault();
-  window.location.href = "/survey";
+  window.location.href = "/public/survey";
 });
 
 $("#survey-btn").on("click", function(event) {
+  event.preventDefault();
+  var ranCountry = Math.floor(Math.random() * countries.length);
+  country = countries[ranCountry];
+  console.log(country);
+  window.location.href = "/destination/" + country;
+});
+
+$("#random-btn").on("click", function(event) {
   event.preventDefault();
   var ranCountry = Math.floor(Math.random() * countries.length);
   country = countries[ranCountry];
