@@ -9,7 +9,7 @@ var country = "";
 
 $("#survey").on("click", function(event) {
   event.preventDefault();
-  window.location.href = "/public/survey";
+  window.location.href = "/survey";
 });
 
 $("#survey-btn").on("click", function(event) {
