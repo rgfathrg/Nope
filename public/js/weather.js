@@ -1,13 +1,25 @@
-var currLogic = require("../public/js/currLogic");
+// import  country  from "./currLogic";
 
-$("#survey-btn").on("click", function (event) {
+// var currLogic = require("./currLogic");    
 
-    event.preventDefault();
+$("#survey-btn").on("click", function () {
+    
+    var selectedCountry = localStorage.getItem("selected_country");
+    var rec_country = selectedCountry;
+    
+    
+    // $.getScript("../js/currLogic.js");
+    
+    // var rec_country = country;
+    // console.log("Retrieved country " + country + "from currLogig.js successfully.");
+    
+    console.log("Random country " + rec_country + "successfully retrieved!");
 
-    var rec_country = country;
+    
+    
+
     var rec_city = "";
-    // var rec_city =  "country.cityName"; - will select from places object
-    // var rec_country = "country.countryName"; - will select from places object
+
     switch (rec_country) {
 
         case "BRAZIL":
@@ -37,10 +49,7 @@ $("#survey-btn").on("click", function (event) {
     }
 
     // var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works properly
-
-
     // "Brazil"; //recommended country - testing to make sure the rest of the code works properly
-
 
     if (rec_city.includes(" ")) {
 
@@ -49,12 +58,13 @@ $("#survey-btn").on("click", function (event) {
         //adjusting name of the city so it will have the correct format for the ajax call in the event the city name contains more than one word
     }
 
-    var Destination = new Array(rec_city, rec_country);
-    var newDest = Destination.join(",");
+    var destination = new Array(rec_city, rec_country);
+    var newDest = destination.join(",");
     //joining the city name and country with "," so the ajax call can be performed with the correct syntax
     console.log(newDest);
 
-    var weatherAPIKey = "f5f08ce79b534c1a907162145181310";
+    var weatherAPIKey = "98faab3250f1413496f172502182010";
+    // "f5f08ce79b534c1a907162145181310";
     var queryURL = "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=" + weatherAPIKey + "&q=" + newDest + "&format=JSON";
     // var location = ""
 
@@ -87,7 +97,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("/////////////////////");
 
         //display weather image on webpage..
-        document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
+        // document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
 
 
         //                   ********** 5 Day Weather Forecast *********** 
@@ -219,5 +229,12 @@ $("#survey-btn").on("click", function (event) {
 
 });
 
+    
 
-module.exports = currLogic;
+
+
+// });
+
+// });
+
+// module.exports = currLogic;

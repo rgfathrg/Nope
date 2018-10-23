@@ -16,8 +16,11 @@ $("#survey-btn").on("click", function(event) {
   event.preventDefault();
   var ranCountry = Math.floor(Math.random() * countries.length);
   country = countries[ranCountry];
+  localStorage.setItem("selected_country", country);
   console.log(country);
   window.location.href = "/destination/" + country;
+
+  
 });
 
 $("#random-btn").on("click", function(event) {
