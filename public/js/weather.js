@@ -1,27 +1,12 @@
 $(document).ready(function(){
 
-// import  country  from "./currLogic";
-
-// var currLogic = require("./currLogic");    
-
-// $("#survey-btn").on("click", function () {
     
     var selectedCountry = localStorage.getItem("selected_country");
     var rec_country = selectedCountry;
-    
-    
-    // $.getScript("../js/currLogic.js");
-    
-    // var rec_country = country;
-    // console.log("Retrieved country " + country + "from currLogig.js successfully.");
-    
-    console.log("Random country " + rec_country + "successfully retrieved!");
-
-    
-    
-
+    console.log("Random country " + rec_country + " successfully retrieved!");
     var rec_city = "";
 
+    //creating switch case so the right city will be selected once the randome Country has been determined
     switch (rec_country) {
 
         case "BRAZIL":
@@ -79,6 +64,8 @@ $(document).ready(function(){
 
         var currentInfo = response.data.current_condition[0];
         var highLow = response.data.weather[0];
+
+        
         var currentDay = {
             currentTemp: currentInfo.temp_F,
             weatherDesc: currentInfo.weatherDesc[0].value,
