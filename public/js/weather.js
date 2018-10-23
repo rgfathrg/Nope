@@ -1,8 +1,10 @@
+$(document).ready(function(){
+
 // import  country  from "./currLogic";
 
 // var currLogic = require("./currLogic");    
 
-$("#survey-btn").on("click", function () {
+// $("#survey-btn").on("click", function () {
     
     var selectedCountry = localStorage.getItem("selected_country");
     var rec_country = selectedCountry;
@@ -228,6 +230,8 @@ $("#survey-btn").on("click", function () {
     });
 
 });
+
+// });
 
     
 
