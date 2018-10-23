@@ -14,10 +14,17 @@ $("#survey").on("click", function(event) {
 
 $("#survey-btn").on("click", function(event) {
   event.preventDefault();
-  var ranCountry = Math.floor(Math.random() * countries.length);
-  country = countries[ranCountry];
-  console.log(country);
-  window.location.href = "/destination/" + country;
+  console.log("btn clicked");
+
+  var formDataElement = document.forms.surveyFormData;
+  var formData = new FormData(formDataElement);
+  console.log("form data: " + formData);
+  var name = formData.get('name');
+  console.log()
+  // var ranCountry = Math.floor(Math.random() * countries.length);
+  // country = countries[ranCountry];
+  // console.log(country);
+  // window.location.href = "/destination/" + country;
 });
 
 $("#random-btn").on("click", function(event) {
