@@ -7,9 +7,6 @@ module.exports = function(app) {
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../survey.html"));
   });
-  app.get("/fact", function(req, res) {
-    res.sendFile(path.join(__dirname, "../facts.html"));
-  });
   app.get("/destination/:country", function(req, res) {
     db.Currencies.findOne({
       where: {
