@@ -100,7 +100,7 @@ $.get(
         "================================================================================="
     );
 });
-$.get('https://raw.githubusercontent.com/factbook/factbook.json/master/africa/mo.json').then(function (data) {
+$.get('https://raw.githubusercontent.com/factbook/factbook.json/master/europe/fr.json').then(function (data) {
     var degree = "At this time none at sufficient levels or seriousness to report";
     var fwBourne = "N/A";
     var issue = "N/A";
