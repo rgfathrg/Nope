@@ -22,6 +22,10 @@ module.exports = function(app) {
       }).then(function(result) {
         return res.json(result);
       });
+    } else {
+      db.Currencies.findAll().then(function(result) {
+        return res.json(result);
+      });
     }
     // currencyLayer.findRate(app, function(code, data) {
     //   if (code === 200) {

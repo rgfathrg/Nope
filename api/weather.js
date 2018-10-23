@@ -1,4 +1,4 @@
-var currLogic = import("../public/js/currLogic");
+var currLogic = require("../public/js/currLogic");
 
 $("#survey-btn").on("click", function (event) {
 
@@ -12,22 +12,27 @@ $("#survey-btn").on("click", function (event) {
 
         case "BRAZIL":
             rec_city = "Rio de Janeir0";
+            console.log(rec_city);
             break;
 
         case "PERU":
             rec_city = "Machu Picchu";
+            console.log(rec_city);
             break;
 
         case "FRANCE":
             rec_city = "Paris";
+            console.log(rec_city);
             break;
 
         case "AUSTRAILA":
             rec_city = "Sydney";
+            console.log(rec_city);
             break;
 
         case "ICELAND":
             rec_city = "Reykjavik";
+            console.log(rec_city);
             break;
     }
 
@@ -215,4 +220,4 @@ $("#survey-btn").on("click", function (event) {
 });
 
 
-// module.exports = currLogic;
+module.exports = currLogic;

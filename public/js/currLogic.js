@@ -29,3 +29,6 @@ $("#currencyCalc").on("click", function(event) {
   var convert = usd * rate;
   $("#fcurr").val(convert.toFixed(2));
 });
+
+
+ 
