@@ -10,7 +10,7 @@ $(document).ready(function(){
     switch (rec_country) {
 
         case "BRAZIL":
-            rec_city = "Rio de Janeir0";
+            rec_city = "Rio de Janeiro";
             console.log(rec_city);
             break;
 
