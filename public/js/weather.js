@@ -108,6 +108,7 @@ $(document).ready(function(){
         console.log("/////////////////////");
 
         //calculating day of the week from date response....
+        var days_of_the_week = [];
         var weekday = new Date(dayOne.date);
 
         var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
@@ -120,10 +121,14 @@ $(document).ready(function(){
         daysofWeek[6] = "Saturday";
 
         var new_weekday = daysofWeek[weekday.getDay()];
+        days_of_the_week.push(new_weekday);
         console.log(new_weekday);
 
-
+        
         //DAY TWO response data...
+        // var weekday2 = new DataCue(dayTwo.date);
+        // var new_weekday2 = daysofWeek[weekday2.getDay()];
+        // days_of_the_week.push(new_weekday2);
         var day2 = response.data.weather[2];
         var dayTwo = {
             date: day2.date,
@@ -140,6 +145,9 @@ $(document).ready(function(){
         console.log("/////////////////////");
 
         //DAY THREE response data...
+        // var weekday3 = new DataCue(dayThree.date);
+        // var new_weekday3 = daysofWeek[weekday3.getDay()];
+        // days_of_the_week.push(new_weekday3);
         var day3 = response.data.weather[3];
         var dayThree = {
             date: day3.date,
@@ -156,6 +164,9 @@ $(document).ready(function(){
         console.log("/////////////////////");
 
         //DAY FOUR response data...
+        // var weekday4 = new DataCue(dayFour.date);
+        // var new_weekday4 = daysofWeek[weekday4.getDay()];
+        // days_of_the_week.push(new_weekday4);
         var day4 = response.data.weather[4];
         var dayFour = {
             date: day4.date,
