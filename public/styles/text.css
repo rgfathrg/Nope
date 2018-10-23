@@ -40,7 +40,7 @@
 }
 
 #comments {
-    width:  90%;
+    width:  66%;
     margin:  auto;
 }
 
@@ -84,3 +84,8 @@ button{
     background-color: lightseagreen;
     color: white;
   }
+
+#survey-btn {
+    width: 66%;
+    margin: auto;
+}
