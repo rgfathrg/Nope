@@ -1,12 +1,42 @@
-$("#survey-btn").on("click", function (event) {
+$(document).ready(function(){
 
-    event.preventDefault();
-    // var rec_city =  "country.cityName"; - will select from places object
-    // var rec_country = "country.countryName"; - will select from places object
+    
+    var selectedCountry = localStorage.getItem("selected_country");
+    var rec_country = selectedCountry;
+    console.log("Random country " + rec_country + " successfully retrieved!");
+    var rec_city = "";
 
-    var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works propertly
-    var rec_country = "Brazil"; //recommended country - testing to make sure the rest of the code works properly
+    //creating switch case so the right city will be selected once the randome Country has been determined
+    switch (rec_country) {
 
+        case "BRAZIL":
+            rec_city = "Rio de Janeir0";
+            console.log(rec_city);
+            break;
+
+        case "PERU":
+            rec_city = "Machu Picchu";
+            console.log(rec_city);
+            break;
+
+        case "FRANCE":
+            rec_city = "Paris";
+            console.log(rec_city);
+            break;
+
+        case "AUSTRAILA":
+            rec_city = "Sydney";
+            console.log(rec_city);
+            break;
+
+        case "ICELAND":
+            rec_city = "Reykjavik";
+            console.log(rec_city);
+            break;
+    }
+
+    // var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works properly
+    // "Brazil"; //recommended country - testing to make sure the rest of the code works properly
 
     if (rec_city.includes(" ")) {
 
@@ -15,12 +45,13 @@ $("#survey-btn").on("click", function (event) {
         //adjusting name of the city so it will have the correct format for the ajax call in the event the city name contains more than one word
     }
 
-    var Destination = new Array(rec_city, rec_country);
-    var newDest = Destination.join(",");
+    var destination = new Array(rec_city, rec_country);
+    var newDest = destination.join(",");
     //joining the city name and country with "," so the ajax call can be performed with the correct syntax
     console.log(newDest);
 
-    var weatherAPIKey = "f5f08ce79b534c1a907162145181310";
+    var weatherAPIKey = "98faab3250f1413496f172502182010";
+    // "f5f08ce79b534c1a907162145181310";
     var queryURL = "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=" + weatherAPIKey + "&q=" + newDest + "&format=JSON";
     // var location = ""
 
@@ -33,6 +64,8 @@ $("#survey-btn").on("click", function (event) {
 
         var currentInfo = response.data.current_condition[0];
         var highLow = response.data.weather[0];
+
+        
         var currentDay = {
             currentTemp: currentInfo.temp_F,
             weatherDesc: currentInfo.weatherDesc[0].value,
@@ -53,7 +86,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("/////////////////////");
 
         //display weather image on webpage..
-        document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
+        // document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
 
 
         //                   ********** 5 Day Weather Forecast *********** 
@@ -184,3 +217,15 @@ $("#survey-btn").on("click", function (event) {
     });
 
 });
+
+// });
+
+    
+
+
+
+// });
+
+// });
+
+// module.exports = currLogic;
