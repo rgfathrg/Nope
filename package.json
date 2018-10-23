@@ -15,11 +15,7 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
-<<<<<<< HEAD
-    "flickrapi": "^0.6.0",
-=======
     "heroku": "^7.18.3",
->>>>>>> 23ecf4e1a568960944b2b19134e380cc5f96a6f0
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
     "path": "^0.12.7",
