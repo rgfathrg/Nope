@@ -12,7 +12,7 @@ module.exports = function (app) {
       where: {
         country: req.params.country
       }
-    }).then(function (result) {
+    }).then(function (result) { 
       var results = result.dataValues;
       console.log(results);
       var hbsObject = {

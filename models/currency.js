@@ -2,19 +2,19 @@ module.exports = function(sequelize, DataTypes) {
   var Currencies = sequelize.define("Currencies", {
     country: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     currency: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     pair: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     rate: {
       type: DataTypes.DECIMAL(10, 3),
-      allowNull: false
+      allowNull: true
     }
   });
   return Currencies;
