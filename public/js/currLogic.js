@@ -22,7 +22,6 @@ $("#survey-btn").on("click", function (event) {
   var enviroPref = $("#survey-enviroPref").val().trim();
   var tempoPref = $("#survey-tempoPref").val().trim();
   var alchoPref = $("#survey-alchoPref").val().trim();
-  var userCurrency = $("#currency").val().trim();
 
   if (tempPref === "Cold") {
     window.location.href = "/destination/ICELAND";
@@ -42,7 +41,7 @@ $("#survey-btn").on("click", function (event) {
     };
   };
 
-  console.log(tempPref + name + enviroPref + tempoPref + alchoPref + userCurrency);
+  console.log(tempPref + name + enviroPref + tempoPref + alchoPref);
  
 });
 
@@ -63,4 +62,13 @@ $("#currencyCalc").on("click", function (event) {
   var rate = $("#tarRate").text();
   var convert = usd * rate;
   $("#fcurr").val(convert.toFixed(2));
+});
+$("#frCurrCalc").on("click", function(event) {
+  event.preventDefault();
+  var fc = $("#fcurr")
+    .val()
+    .trim();
+  var rate = $("#tarRate").text();
+  var convert = fc / rate;
+  $("#usdcurr").val(convert.toFixed(2));
 });
