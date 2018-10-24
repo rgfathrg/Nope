@@ -74,8 +74,15 @@
     text-align: center;
 }
 #currencyCalc {
-    margin: auto;
+    margin-lefT: 33%;
+    margin-right: 10px;
     display: block;
+    float: left;
+}
+#frCurrCalc {
+    margin: auto;
+    display: block; 
+    float: left;
 }
 .exchBox {
     margin: auto;
