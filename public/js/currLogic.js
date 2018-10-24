@@ -40,17 +40,4 @@ $("#currencyCalc").on("click", function(event) {
   var rate = $("#tarRate").text();
   var convert = usd * rate;
   $("#fcurr").val(convert.toFixed(2));
-<<<<<<< HEAD
 });
-=======
-});
-$("#frCurrCalc").on("click", function(event) {
-  event.preventDefault();
-  var fcurr = $("#fcurr")
-    .val()
-    .trim();
-  var rate = $("#tarRate").text();
-  var convert = fcurr / rate;
-  $("#usdcurr").val(convert.toFixed(2));
-});
->>>>>>> d5a9e94a6e43557e09eefdecb4fa34c0f4e750cd
