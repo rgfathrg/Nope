@@ -79,54 +79,21 @@
                 </div>
             </div>
 
-            {{!-- <div class="jumbotron align-items-center" id="navIndexWeather">
-                <p class="contentHeaders">CURRENT WEATHER</p>
-                <div id="icon"></div>
-                {{#each currentDay}} 
-                <p>{{ weatherIconUrl }}</p>
-                <p>Current Temperature: {{ currentTemp }}&#8457;</p>
-                <p>{{ weatherDesc }}</p>
-                <p>Low {{ low }}&#8457; / High {{ high }}&#8457;</p>
-                <hr> {{/each}}
+            <div class="jumbotron align-items-center weatherInfo" id="navIndexWeather">
+                <div class="column1">
+                    <p class="contentHeaders">CURRENT WEATHER</p>
                 <hr>
-            </div> --}}
-            
-        <div class="jumbotron align-items-center weatherInfo" id="navIndexWeather">
-            <div class="column1">
-            <hr>
-            
-            <p class="contentHeaders">CURRENT WEATHER</p>
-            {{!-- <div id="top"> --}}
-            <p>Today's Weather</p>
-            <div id="icon">
-                {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
-            </div>
-            <div id="weatherInfo">
 
+                    <p>Today's Weather</p>
+                    <div id="icon"></div>
+                    <div id="weatherInfo"></div>
+                </div>
             </div>
-           
-            <hr>
-            </div>
-
-            {{!-- <div class="column2">
-             <hr>
-            {{!-- <div id="top"> --}}
-            {{!-- <p>Today's Weather</p> --}}
-            <div id="icon">
-                {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
-            {{!-- </div>
-            <div id="weatherInfo">
-
-            </div>
-           
-            <hr>
-            </div> --}} 
-        </div>
 
             <div class="jumbotron align-items-center" id="navIndexCurrancy">
                 <p class="contentHeaders">EXCHANGE RATES</p>
                 <hr>
-                <p class="center">{{pair}} : Please Enter Amount
+                <p class="center">{{pair}} :
                     <span id="tarRate">{{rate}}</span>
                 </p>
                 <div class="input-group input-group-sm mb-3 exchBox">
@@ -141,17 +108,18 @@
                     </div>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="fcurr">
                 </div>
-                <button class="btn btn-primary" type="submit" id="currencyCalc">Convert</button>
-
+                <button class="btn btn-primary" type="submit" id="currencyCalc">Get Foreign Amount</button>
+                <button class="btn btn-primary" type="submit" id="frCurrCalc">Get US Dollar Amount</button>
+                <br>
+                <br>
             </div>
+
+
 
             <div class="jumbotron align-items-center" id="navIndexPassVisa">
                 <p class="contentHeaders">PASSPORT AND VISA INFORMATION</p>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias blanditiis ducimus commodi consectetur
-                    quos laboriosam illum atque reprehenderit libero deserunt ipsa repellendus, rem debitis officiis, in
-                    quisquam odit. Omnis deleniti illo dolorem incidunt. Error ipsam eius nulla. Asperiores, placeat cumque
-                    autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?</p>
+                <div id="requirements"></div>
             </div>
 
             <div class="jumbotron align-items-center" id="navIndexFacts">
@@ -166,15 +134,15 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias blanditiis ducimus commodi consectetur
                     quos laboriosam illum atque reprehenderit libero deserunt ipsa repellendus, rem debitis officiis, in
                     quisquam odit. Omnis deleniti illo dolorem incidunt. Error ipsam eius nulla. Asperiores, placeat cumque
-                    autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?</p>
+                    autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?
+                </p>
 
             </div>
         </div>
-
-
-
-
     </div>
+    </div>
+    </div>
+
 </body>
 <script text="text/javascript" src="../js/currLogic.js"></script>
 <script text="text/javascript" src="../js/worldFact.js"></script>
