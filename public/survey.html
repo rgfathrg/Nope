@@ -16,15 +16,15 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="typewriter">
-            <h1>Survey-public</h1>
+            <h1>Survey</h1>
         </div>
     </div>
 
     <div class="container">
-        <form name="surveyForm" action="" method="post" id="surveyFormData"></form>>
+        <form name="surveyForm" action="" method="get" id="surveyFormData"></form> 
         <div class="form-group">
             <label for="survey">Name</label>
-            <input type="text" class="form-control" name="inputname" id="name" placeholder="Enter Name">
+            <input type="text" class="form-control" name="inputname" id="name" placeholder="Enter Name" value="">
         </div>
         <div class="form-group">
             <label for="email">Email Address</label>
@@ -32,14 +32,14 @@
         </div>
         <div class="form-group">
             <label for="passport">What kind of weather do you prefer?</label>
-            <select class="form-control" id="passport">
+            <select class="form-control" id="survey-weatherPref">
                 <option>Cold</option>
                 <option>Warm</option>
             </select>
         </div>
         <div class="form-group">
             <label for="passport">Do you prefer City or Countryside?</label>
-            <select class="form-control" id="passport">
+            <select class="form-control" id="survey-enviroPref">
                 <option>City</option>
                 <option>Countryside</option>
             </select>
@@ -90,7 +90,7 @@
         <label for="comments" id="addedComments">Additional comments?</label>
         <textarea class="form-control" id="comments" rows="3"></textarea>
     </div>
-    <button type="button" class="btn btn btn-lg btn-block" onClick="surveyRes(this.form)" >Submit</button>
+    <button type="button" class="btn btn btn-lg btn-block" id="survey-btntest">Submit</button>
 
     <!-- id="survey-btn" -->
 
@@ -98,21 +98,41 @@
     </div>
     
     <script type="text/javascript" src="../js/currLogic.js"></script>
-<<<<<<< HEAD
-    <title>Survey</title>
-=======
     <!-- <script type="text/javascript" src="../js/weather.js"></script> -->
     
     
         <title>Survey</title>
->>>>>>> d5a9e94a6e43557e09eefdecb4fa34c0f4e750cd
 </body>
 
 <script>
 
+    $("#survey-btntest").on("click", function(event) {
+        event.preventDefault();
+
+        var name = $("#name").val().trim();
+        var tempPref = $("#survey-weatherPref").val().trim();
+        var enviroPref = $("#survey-enviroPref").val().trim();
+
+
+
+        console.log(tempPref + name + enviroPref);
+    });
+    // $(“#submitButton”).on(“click”, function (event) {
+    // event.preventDefault();
+ 
+    // var email = $(“#emailInput”).val().trim();
+    // var firstName = $(“#firstNameInput”).val().trim();
+    // var lastName = $(“#lastNameInput”).val().trim();
+    // var comments = $(“#commentsInput”).val().trim();
+    // var number = $(“#phoneNumber”).val().trim();
+    
+
     function surveyRes (form) {
-        var TestVar = form.inputname.value;
-        console.log("You typed: " + TestVar);
+        var arrytest = $("surveyFormData").serializeArray();
+        console.log(arrytest);
+
+        // var TestVar = form.inputname.value;
+        // console.log("You typed: " + TestVar);
     }
 
 </script>
