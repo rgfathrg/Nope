@@ -26,7 +26,8 @@
                     <a class="nav-link" href="#navIndexWeather">Weather</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                        aria-expanded="false">More</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#navIndexCurrancy">Currency</a>
                         <a class="dropdown-item" href="#navIndexPassVisa">Passport/Visa Info</a>
@@ -56,15 +57,14 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                                alt="First slide">
+                            <img class="d-block w-100" id="galleryPic1" src="https://us933fm.com/wp-content/themes/vipology_02V/images/missing-image-232x150.png" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            <img class="d-block w-100" id="galleryPic2" src="https://us933fm.com/wp-content/themes/vipology_02V/images/missing-image-232x150.png"
                                 alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="https://images.pexels.com/photos/60217/pexels-photo-60217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            <img class="d-block w-100" id="galleryPic3"  src="https://us933fm.com/wp-content/themes/vipology_02V/images/missing-image-232x150.png"
                                 alt="Third slide">
                         </div>
                     </div>
@@ -82,9 +82,11 @@
             <div class="jumbotron align-items-center weatherInfo" id="navIndexWeather">
                 <div class="weather_display">
                     <p class="contentHeaders">CURRENT WEATHER</p>
-                <hr>
+                    <hr>
 
-                    <strong><p>Today's Weather</p></strong>
+                    <strong>
+                        <p>Today's Weather</p>
+                    </strong>
                     <div id="icon"></div>
                     <div id="weatherInfo"></div>
                 </div>
@@ -100,13 +102,15 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-sm">USD</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="usdcurr">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                        id="usdcurr">
                 </div>
                 <div class="input-group input-group-sm mb-3 exchBox">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-sm">{{currency}}</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="fcurr">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
+                        id="fcurr">
                 </div>
                 <button class="btn btn-primary convert" type="submit" id="currencyCalc">Convert to {{currency}}</button>
                 <button class="btn btn-primary convert" type="submit" id="frCurrCalc">Convert to USD</button>
@@ -128,15 +132,17 @@
                 <div id="worldFacts"></div>
             </div>
 
-        <div class="jumbotron align-items-center" id="navIndexAbout">
-            <hr>
-            <p><strong>ABOUT VECTO (FOOTER)</strong></p>
-            <p><strong>Courtney, Grant, James, Michael, Daniel and Keren</strong></p>
-            <p>Created 2018</p>
-            <p>Coding Bootcamp</p>
-            <hr>
+
+            <div class="jumbotron align-items-center" id="navIndexAbout">
+                <hr>
+                <p><strong>ABOUT VECTO</strong></p>
+                <p><strong>Courtney, Grant, James, Michael, Daniel and Keren</strong></p>
+                <p>Created 2018</p>
+                <p>Coding Bootcamp</p>
+                <hr>
+            </div>
+
         </div>
-    </div>
     </div>
     </div>
 
@@ -145,8 +151,6 @@
 <script text="text/javascript" src="../js/currLogic.js"></script>
 <script text="text/javascript" src="../js/worldFact.js"></script>
 <script text="text/javascript" src="../js/visa.js"></script>
-<<<<<<< HEAD
+<script text="text/javascript" src="../js/gallery.js"></script>
 <script text="text/javascript" src="../js/weather.js"></script>
-=======
-<script text="text/javascript" src="../js/weather.js"></script>
->>>>>>> d3d08a8ff9557ebebd36a94213830072dad1ae7e
+
