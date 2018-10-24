@@ -86,6 +86,7 @@
 }
 .exchBox {
     margin: auto;
+    height: auto;
 }
 
 .weather_display {
