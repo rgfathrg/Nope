@@ -31,6 +31,7 @@ $("#random-btn").on("click", function(event) {
   event.preventDefault();
   var ranCountry = Math.floor(Math.random() * countries.length);
   country = countries[ranCountry];
+  localStorage.setItem("selected_country", country);
   console.log(country);
   window.location.href = "/destination/" + country;
 });
@@ -43,4 +44,13 @@ $("#currencyCalc").on("click", function(event) {
   var rate = $("#tarRate").text();
   var convert = usd * rate;
   $("#fcurr").val(convert.toFixed(2));
+});
+$("#frCurrCalc").on("click", function(event) {
+  event.preventDefault();
+  var fcurr = $("#fcurr")
+    .val()
+    .trim();
+  var rate = $("#tarRate").text();
+  var convert = fcurr / rate;
+  $("#usdcurr").val(convert.toFixed(2));
 });

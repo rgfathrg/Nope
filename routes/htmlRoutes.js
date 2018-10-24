@@ -7,6 +7,7 @@ module.exports = function (app) {
   app.get("/survey", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
+<<<<<<< HEAD
   app.get("/fact", function (req, res) {
     res.sendFile(path.join(__dirname, "../facts.html"));
   });
@@ -47,11 +48,14 @@ module.exports = function (app) {
 
 
 
+=======
+  app.get("/destination/:country", function(req, res) {
+>>>>>>> d5a9e94a6e43557e09eefdecb4fa34c0f4e750cd
     db.Currencies.findOne({
       where: {
         country: req.params.country
       }
-    }).then(function (result) {
+    }).then(function (result) { 
       var results = result.dataValues;
       console.log(results);
       var hbsObject = {
