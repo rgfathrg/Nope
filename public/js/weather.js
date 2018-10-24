@@ -98,7 +98,7 @@ $(document).ready(function () {
         var src = document.getElementById("icon");
         src.appendChild(img);
 
-        var weatherToday = `<p> <strong>${currentDay.weatherDesc} </strong><br>
+        var weatherToday = `<p><strong>${currentDay.weatherDesc} </strong><br>
         Current Temp: ${currentDay.currentTemp}&#8457;<br>
         Low ${currentDay.low}&#8457/ High ${currentDay.high}&#8457
         </p>`
