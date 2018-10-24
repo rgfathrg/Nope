@@ -96,7 +96,6 @@ $(document).ready(function () {
         // img.src = currentDay.weatherIconUrl;
         // var src = document.getElementById("icon");
         // src.appendChild(img);
-
         var weatherToday = `<p> 
         <img src=${currentDay.weatherIconUrl}><br>
         Weather Condition: ${currentDay.weatherDesc} <br>
@@ -104,6 +103,7 @@ $(document).ready(function () {
         Low ${currentDay.low}&#8457/ High ${currentDay.high}&#8457
         </p>`
         $("#weatherInfo").append(weatherToday);
+
 
 
         //                   ********** 5 Day Weather Forecast *********** 
@@ -139,18 +139,19 @@ $(document).ready(function () {
         var new_weekday = daysofWeek[weekday.getDay()];
         // days_of_the_week.push(new_weekday);
         console.log(new_weekday);
-        $("#top").prepend(new_weekday)
+        // $("#weatherInfo").prepend(new_weekday)
 ;
-        // var img = document.createElement("img");
-        // img.src = dayOne.weatherIconUrl;
-        // var src = document.getElementById("icon");
-        // src.appendChild(img);
+        // var img2 = document.createElement("img");
+        // img2.src = dayOne.weatherIconUrl;
+        // var src2 = document.getElementById("icon");
+        // src2.appendChild(img2);
 
-        var weatherDayOne = `<h1>${new_weekday}</h1><p> 
+        var weatherDayOne = `<p> 
         <img src=${dayOne.weatherIconUrl}><br>
+        <strong>${new_weekday}</strong><br>
         Weather Condition: ${dayOne.weatherDesc} <br>
-        Low: ${dayOne.minTemp}&#8457;<br>
-        High: ${dayOne.maxTemp}&#8457
+        Low Temp: ${dayOne.minTemp}&#8457;<br>
+        High Temp: ${dayOne.maxTemp}&#8457
         </p>`
         $("#weatherInfo").append(weatherDayOne);
 
@@ -173,6 +174,27 @@ $(document).ready(function () {
         console.log("Day 2 Weather Condition: " + dayTwo.weatherDesc); //weather description for day 2
         console.log("Day 2 Weather Icon Url: " + dayTwo.weatherIconUrl); //weather icon image for day 2
         console.log("/////////////////////");
+        var weekday2 = new Date(dayTwo.date);
+
+        var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
+        daysofWeek[0] = "Sunday";
+        daysofWeek[1] = "Monday";
+        daysofWeek[2] = "Tuesday";
+        daysofWeek[3] = "Wednesday";
+        daysofWeek[4] = "Thursday";
+        daysofWeek[5] = "Friday";
+        daysofWeek[6] = "Saturday";
+
+        var new_weekday2 = daysofWeek[weekday2.getDay()];
+
+        var weatherDayTwo = `<p> 
+        <img src=${dayTwo.weatherIconUrl}><br>
+        <strong>${new_weekday2}</strong><br>
+        Weather Condition: ${dayTwo.weatherDesc} <br>
+        Low Temp: ${dayTwo.minTemp}&#8457;<br>
+        High Temp: ${dayTwo.maxTemp}&#8457
+        </p>`
+        $("#weatherInfo").append(weatherDayTwo);
 
         //DAY THREE response data...
         // var weekday3 = new DataCue(dayThree.date);
@@ -192,6 +214,27 @@ $(document).ready(function () {
         console.log("Day 3 Weather Condition: " + dayThree.weatherDesc); //weather description for day 3
         console.log("Day 3 Weather Icon Url: " + dayThree.weatherIconUrl); //weather icon image for day 3
         console.log("/////////////////////");
+        var weekday3 = new Date(dayThree.date);
+
+        var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
+        daysofWeek[0] = "Sunday";
+        daysofWeek[1] = "Monday";
+        daysofWeek[2] = "Tuesday";
+        daysofWeek[3] = "Wednesday";
+        daysofWeek[4] = "Thursday";
+        daysofWeek[5] = "Friday";
+        daysofWeek[6] = "Saturday";
+
+        var new_weekday3 = daysofWeek[weekday3.getDay()];
+
+        var weatherDayThree = `<p> 
+        <img src=${dayThree.weatherIconUrl}><br>
+        <strong>${new_weekday3}</strong><br>
+        Weather Condition: ${dayThree.weatherDesc} <br>
+        Low Temp: ${dayThree.minTemp}&#8457;<br>
+        High Temp: ${dayThree.maxTemp}&#8457
+        </p>`
+        $("#weatherInfo").append(weatherDayThree);
 
         //DAY FOUR response data...
         // var weekday4 = new DataCue(dayFour.date);
@@ -211,6 +254,27 @@ $(document).ready(function () {
         console.log("Day 4 Weather Condition: " + dayFour.weatherDesc); //weather description for day 4
         console.log("Day 4 Weather Icon Url: " + dayFour.weatherIconUrl); //weather icon image for day 4
         console.log("/////////////////////");
+        var weekday4 = new Date(dayFour.date);
+
+        var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
+        daysofWeek[0] = "Sunday";
+        daysofWeek[1] = "Monday";
+        daysofWeek[2] = "Tuesday";
+        daysofWeek[3] = "Wednesday";
+        daysofWeek[4] = "Thursday";
+        daysofWeek[5] = "Friday";
+        daysofWeek[6] = "Saturday";
+
+        var new_weekday4 = daysofWeek[weekday4.getDay()];
+
+        var weatherDayFour = `<p> 
+        <img src=${dayFour.weatherIconUrl}><br>
+        <strong>${new_weekday4}</strong><br>
+        Weather Condition: ${dayFour.weatherDesc} <br>
+        Low Temp: ${dayFour.minTemp}&#8457;<br>
+        High Temp: ${dayFour.maxTemp}&#8457
+        </p>`
+        $("#weatherInfo").append(weatherDayFour);
 
         //DAY FIVE response data...
         var day5 = response.data.weather[5];

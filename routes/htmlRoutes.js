@@ -23,38 +23,7 @@ module.exports = function (app) {
       }
       res.render("destination", hbsObject);
 
-      const places = [
-        {
-          country: "Brazil",
-          city: "Rio de Janeiro",
-          // picSrc: [url1, url2, url3],
-          alpha2: "BR"
-        },
-        {
-          country: "France",
-          city: "Paris",
-          // picSrc: [url1, url2, url3],
-          alpha2: "FR"
-        },
-        {
-          country: "Peru",
-          city: "Machu Picchu",
-          // picSrc: [url1, url2, url3],
-          alpha2: "BR"
-        },
-        {
-          country: "Australia",
-          city: "Sydney",
-          // picSrc: [url1, url2, url3],
-          alpha2: "AU"
-        },
-        {
-          country: "Iceland",
-          city: "Reykjavik",
-          // picSrc: [url1, url2, url3],
-          alpha2: "BR"
-        }
-      ];
+
     });
   });
 };

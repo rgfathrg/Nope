@@ -86,7 +86,7 @@
 	animation-iteration-count: infinite;
 	-webkit-animation-iteration-count: infinite;
   }
-  
+
   .earth:after {
     position: relative;
     content: "";
