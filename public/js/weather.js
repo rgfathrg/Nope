@@ -1,12 +1,42 @@
-$("#survey-btn").on("click", function (event) {
+$(document).ready(function () {
 
-    event.preventDefault();
-    // var rec_city =  "country.cityName"; - will select from places object
-    // var rec_country = "country.countryName"; - will select from places object
 
-    var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works propertly
-    var rec_country = "Brazil"; //recommended country - testing to make sure the rest of the code works properly
+    var selectedCountry = localStorage.getItem("selected_country");
+    var rec_country = selectedCountry;
+    console.log("Random country " + rec_country + " successfully retrieved!");
+    var rec_city = "";
 
+    //creating switch case so the right city will be selected once the random Country has been determined
+    switch (rec_country) {
+
+        case "BRAZIL":
+            rec_city = "Rio de Janeiro";
+            console.log(rec_city);
+            break;
+
+        case "PERU":
+            rec_city = "Machu Picchu";
+            console.log(rec_city);
+            break;
+
+        case "FRANCE":
+            rec_city = "Paris";
+            console.log(rec_city);
+            break;
+
+        case "AUSTRAILA":
+            rec_city = "Sydney";
+            console.log(rec_city);
+            break;
+
+        case "ICELAND":
+            rec_city = "Reykjavik";
+            console.log(rec_city);
+            break;
+    }
+
+    // var rec_city = "Rio de Janeiro"; //recommended city - testing to make sure the rest of the code works properly
+    // "Brazil"; //recommended country - testing to make sure the rest of the code works properly
 
     if (rec_city.includes(" ")) {
 
@@ -15,12 +45,13 @@ $("#survey-btn").on("click", function (event) {
         //adjusting name of the city so it will have the correct format for the ajax call in the event the city name contains more than one word
     }
 
-    var Destination = new Array(rec_city, rec_country);
-    var newDest = Destination.join(",");
+    var destination = new Array(rec_city, rec_country);
+    var newDest = destination.join(",");
     //joining the city name and country with "," so the ajax call can be performed with the correct syntax
     console.log(newDest);
 
-    var weatherAPIKey = "f5f08ce79b534c1a907162145181310";
+    var weatherAPIKey = "98faab3250f1413496f172502182010";
+    // "f5f08ce79b534c1a907162145181310";
     var queryURL = "http://api.worldweatheronline.com/premium/v1/weather.ashx?key=" + weatherAPIKey + "&q=" + newDest + "&format=JSON";
     // var location = ""
 
@@ -33,6 +64,10 @@ $("#survey-btn").on("click", function (event) {
 
         var currentInfo = response.data.current_condition[0];
         var highLow = response.data.weather[0];
+        //calculating day of the week from date response....
+        // var days_of_the_week = [];
+
+
         var currentDay = {
             currentTemp: currentInfo.temp_F,
             weatherDesc: currentInfo.weatherDesc[0].value,
@@ -53,7 +88,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("/////////////////////");
 
         //display weather image on webpage..
-        document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
+        // document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
 
 
         //                   ********** 5 Day Weather Forecast *********** 
@@ -74,7 +109,7 @@ $("#survey-btn").on("click", function (event) {
         console.log("Day 1 Weather Icon Url: " + dayOne.weatherIconUrl); //weather icon image for day 1
         console.log("/////////////////////");
 
-        //calculating day of the week from date response....
+
         var weekday = new Date(dayOne.date);
 
         var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
@@ -87,10 +122,13 @@ $("#survey-btn").on("click", function (event) {
         daysofWeek[6] = "Saturday";
 
         var new_weekday = daysofWeek[weekday.getDay()];
+        // days_of_the_week.push(new_weekday);
         console.log(new_weekday);
 
-
         //DAY TWO response data...
+        // var weekday2 = new DataCue(dayTwo.date);
+        // var new_weekday2 = daysofWeek[weekday2.getDay()];
+        // days_of_the_week.push(new_weekday2);
         var day2 = response.data.weather[2];
         var dayTwo = {
             date: day2.date,
@@ -107,6 +145,9 @@ $("#survey-btn").on("click", function (event) {
         console.log("/////////////////////");
 
         //DAY THREE response data...
+        // var weekday3 = new DataCue(dayThree.date);
+        // var new_weekday3 = daysofWeek[weekday3.getDay()];
+        // days_of_the_week.push(new_weekday3);
         var day3 = response.data.weather[3];
         var dayThree = {
             date: day3.date,
@@ -123,6 +164,9 @@ $("#survey-btn").on("click", function (event) {
         console.log("/////////////////////");
 
         //DAY FOUR response data...
+        // var weekday4 = new DataCue(dayFour.date);
+        // var new_weekday4 = daysofWeek[weekday4.getDay()];
+        // days_of_the_week.push(new_weekday4);
         var day4 = response.data.weather[4];
         var dayFour = {
             date: day4.date,
@@ -184,3 +228,15 @@ $("#survey-btn").on("click", function (event) {
     });
 
 });
+
+// });
+
+
+
+
+
+// });
+
+// });
+
+// module.exports = currLogic;

@@ -5,17 +5,14 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/landing.html"));
   });
   app.get("/survey", function (req, res) {
-    res.sendFile(path.join(__dirname, "../survey.html"));
+    res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
-  app.get("/fact", function (req, res) {
-    res.sendFile(path.join(__dirname, "../facts.html"));
-  });
-  app.get("/destination/:country", function (req, res) {
+  app.get("/destination/:country", function(req, res) {
     db.Currencies.findOne({
       where: {
         country: req.params.country
       }
-    }).then(function (result) {
+    }).then(function (result) { 
       var results = result.dataValues;
       console.log(results);
       var hbsObject = {
