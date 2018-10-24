@@ -69,25 +69,36 @@
             </div>
         </div>
 
-        <div class="jumbotron align-items-center" id="navIndexWeather">
+        <div class="jumbotron align-items-center weatherInfo" id="navIndexWeather">
+            <div class="column1">
             <hr>
+            
             <p><strong>WEATHER API</strong></p>
+            {{!-- <div id="top"> --}}
             <p>Today's Weather</p>
             <div id="icon">
-                <img src="{{currentDay.weatherIconUrl}}">
+                {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
             </div>
-            <P>{{currentDay.weatherDesc}}</P>
-            <p>Current Temp: {{currentDay.currentTemp }}&#8457;</p>
-            {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
-            {{!-- <div id="icon"></div> --}}
-            {{!-- {{#each currentDay}} --}}
-            {{!-- <p>{{ weatherIconUrl }}</p> --}}
-            {{!-- <p>Current Temperature: {{ currentTemp }}&#8457;</p>
-            <p>{{ weatherDesc }}</p>
-            <p>Low {{ low }}&#8457; / High {{ high }}&#8457;</p>
+            <div id="weatherInfo">
+
+            </div>
+           
             <hr>
-            {{/each}} --}}
+            </div>
+
+            {{!-- <div class="column2">
+             <hr>
+            {{!-- <div id="top"> --}}
+            {{!-- <p>Today's Weather</p> --}}
+            <div id="icon">
+                {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
+            {{!-- </div>
+            <div id="weatherInfo">
+
+            </div>
+           
             <hr>
+            </div> --}} 
         </div>
 
         <div class="jumbotron align-items-center" id="navIndexCurrancy">
