@@ -37,6 +37,9 @@
 #navIndexCurrancy {
     background-color: whitesmoke !important;
     padding: 13px;
+
+    /* check these two and see which looks best */
+    padding-bottom: 60px;
     height: 18rem;
 }
 #navIndexPassVisa {
