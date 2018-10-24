@@ -1,79 +1,101 @@
-<div class="container">
+<head>
+    <link rel="stylesheet" href="../styles/destination.css">
+</head>
 
-    <nav id="destNavBar" class="navbar navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="/"><strong>Vecto</strong></a>
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="#navIndexDestination">Destination</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#navIndexCarousel">Gallery</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#navIndexWeather">Weather</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">More</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#navIndexCurrancy">Currency</a>
-                    <a class="dropdown-item" href="#navIndexPassVisa">Passport/Visa Info</a>
-                    <a class="dropdown-item" href="#navIndexFacts">Destination Info</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#navIndexAbout">About Vecto</a>
+<body style="
+    background-image: url(../styles/images/map.jpg);    
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; ">
+    <div class="container">
+
+        <nav id="destNavBar" class="navbar navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="/">
+                <strong>VECTO</strong>
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#navIndexDestination">Destination</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#navIndexCarousel">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#navIndexWeather">Weather</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#navIndexCurrancy">Currency</a>
+                        <a class="dropdown-item" href="#navIndexPassVisa">Passport/Visa Info</a>
+                        <a class="dropdown-item" href="#navIndexFacts">Destination Info</a>
+                        <div role="separator" class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#navIndexAbout">About Vecto</a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div data-spy="scroll" data-target="#destNavBar" data-offset="0">
+
+            <div class="jumbotron align-items-center" id="navIndexDestination">
+                <div class="col align-self-center">
+                    <h1 id="destination">{{country}}</h1>
                 </div>
-            </li>
-
-        </ul>
-    </nav>
-
-    <div data-spy="scroll" data-target="#destNavBar" data-offset="0">
-
-        <div class="jumbotron align-items-center" id="navIndexDestination">
-            <div class="col align-self-center">
-                <h1 id="destination">{{country}}</h1>
             </div>
-        </div>
 
-        <hr>
-
-        <div class="jumbotron destPics" id="navIndexCarousel">
-            <div id="destPicIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#destPicIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#destPicIndicators" data-slide-to="1"></li>
-                    <li data-target="#destPicIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                            alt="First slide">
+            <div class="jumbotron destPics" id="navIndexCarousel">
+                <div id="destPicIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#destPicIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#destPicIndicators" data-slide-to="1"></li>
+                        <li data-target="#destPicIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                                alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="https://images.pexels.com/photos/60217/pexels-photo-60217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Third slide">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                            alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="https://images.pexels.com/photos/60217/pexels-photo-60217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                            alt="Third slide">
-                    </div>
+                    <a class="carousel-control-prev" href="#destPicIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#destPicIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#destPicIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#destPicIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
-        </div>
 
+            {{!-- <div class="jumbotron align-items-center" id="navIndexWeather">
+                <p class="contentHeaders">CURRENT WEATHER</p>
+                <div id="icon"></div>
+                {{#each currentDay}} 
+                <p>{{ weatherIconUrl }}</p>
+                <p>Current Temperature: {{ currentTemp }}&#8457;</p>
+                <p>{{ weatherDesc }}</p>
+                <p>Low {{ low }}&#8457; / High {{ high }}&#8457;</p>
+                <hr> {{/each}}
+                <hr>
+            </div> --}}
+            
         <div class="jumbotron align-items-center weatherInfo" id="navIndexWeather">
             <div class="column1">
             <hr>
             
-            <p><strong>WEATHER API</strong></p>
+            <p class="contentHeaders">CURRENT WEATHER</p>
             {{!-- <div id="top"> --}}
             <p>Today's Weather</p>
             <div id="icon">
@@ -101,63 +123,59 @@
             </div> --}} 
         </div>
 
-        <div class="jumbotron align-items-center" id="navIndexCurrancy">
-            <hr>
-            <p><strong>CURRENCY API</strong></p>
-            <p>{{pair}} : <span id="tarRate">{{rate}}</span></p>
-            <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">USD</span>
+            <div class="jumbotron align-items-center" id="navIndexCurrancy">
+                <p class="contentHeaders">EXCHANGE RATES</p>
+                <hr>
+                <p class="center">{{pair}} : Please Enter Amount
+                    <span id="tarRate">{{rate}}</span>
+                </p>
+                <div class="input-group input-group-sm mb-3 exchBox">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">USD</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="usdcurr">
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                    id="usdcurr">
-            </div>
-            <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">{{currency}}</span>
+                <div class="input-group input-group-sm mb-3 exchBox">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">{{currency}}</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="fcurr">
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-                    id="fcurr">
+                <button class="btn btn-primary" type="submit" id="currencyCalc">Convert</button>
+
             </div>
-            <button class="btn btn-primary" type="submit" id="currencyCalc">Get Foreign Amount</button>
-            <button class="btn btn-primary" type="submit" id="frCurrCalc">Get US Dollars</button>
-            <hr>
+
+            <div class="jumbotron align-items-center" id="navIndexPassVisa">
+                <p class="contentHeaders">PASSPORT AND VISA INFORMATION</p>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias blanditiis ducimus commodi consectetur
+                    quos laboriosam illum atque reprehenderit libero deserunt ipsa repellendus, rem debitis officiis, in
+                    quisquam odit. Omnis deleniti illo dolorem incidunt. Error ipsam eius nulla. Asperiores, placeat cumque
+                    autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?</p>
+            </div>
+
+            <div class="jumbotron align-items-center" id="navIndexFacts">
+                <p class="contentHeaders">DESTINATION FACTS</p>
+                <hr>
+                <div id="worldFacts"></div>
+            </div>
+
+            <div class="jumbotron align-items-center" id="navIndexAbout">
+                <p class="contentHeaders">ABOUT VECTO</p>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias blanditiis ducimus commodi consectetur
+                    quos laboriosam illum atque reprehenderit libero deserunt ipsa repellendus, rem debitis officiis, in
+                    quisquam odit. Omnis deleniti illo dolorem incidunt. Error ipsam eius nulla. Asperiores, placeat cumque
+                    autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?</p>
+
+            </div>
         </div>
 
-        <div class="jumbotron align-items-center" id="navIndexPassVisa">
-            <hr>
-            <p><strong>PASSPORT AND VISA INFO API</strong></p>
-            <div id="requirements">
-                
-            </div>
-            <hr>
-        </div>
 
-        <div class="jumbotron align-items-center" id="navIndexFacts">
-            <hr>
-            <p><strong>DESTINATION FACTS API</strong></p>
-            <div id="worldFacts">
-                
-            </div>
-            <hr>
-        </div>
 
-        <div class="jumbotron align-items-center" id="navIndexAbout">
-            <hr>
-            <p><strong>ABOUT VECTO (FOOTER)</strong></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam alias blanditiis ducimus commodi
-                consectetur quos laboriosam illum atque reprehenderit libero deserunt ipsa repellendus, rem debitis
-                officiis, in quisquam odit. Omnis deleniti illo dolorem incidunt. Error ipsam eius nulla. Asperiores,
-                placeat cumque autem enim consequuntur reprehenderit. Veritatis incidunt ipsa fugiat adipisci?</p>
-            <hr>
-        </div>
+
     </div>
-
-
-
-
-</div>
+</body>
 <script text="text/javascript" src="../js/currLogic.js"></script>
 <script text="text/javascript" src="../js/worldFact.js"></script>
-<script text="text/javascript" src="../js/visa.js"></script>
-<script text="text/javascript" src="../js/weather.js"></script>
+<script text="text/javascript" src="../api/weather.js"></script>
