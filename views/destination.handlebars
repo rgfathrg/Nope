@@ -74,9 +74,9 @@
             <p><strong>WEATHER API</strong></p>
             <p>Today's Weather</p>
             <div id="icon">
-                <img src="{{currentDay.weatherIconUrl}}">
+                <img src={{currentDay.weatherIconUrl}}>
             </div>
-            <P>{{currentDay.weatherDesc}}</P>
+            <p>{{currentDay.weatherDesc}}</P>
             <p>Current Temp: {{currentDay.currentTemp }}&#8457;</p>
             {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
             {{!-- <div id="icon"></div> --}}
@@ -87,6 +87,7 @@
             <p>Low {{ low }}&#8457; / High {{ high }}&#8457;</p>
             <hr>
             {{/each}} --}}
+        
             <hr>
         </div>
 

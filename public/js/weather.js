@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     
     var selectedCountry = localStorage.getItem("selected_country");
     var rec_country = selectedCountry;
@@ -73,8 +72,6 @@ $(document).ready(function(){
             low: highLow.mintempF,
             high: highLow.mintempF
         }
-
-
         // console.log(response);
         // console.log("It works... " + response.data.current_condition[0]);
 
