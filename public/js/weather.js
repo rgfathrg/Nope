@@ -1,15 +1,15 @@
-$(document).ready(function(){
-    
-    var selectedCountry = localStorage.getItem("selected_country");
+$(document).ready(function () {
+
+   var selectedCountry = localStorage.getItem("selected_country");
     var rec_country = selectedCountry;
     console.log("Random country " + rec_country + " successfully retrieved!");
     var rec_city = "";
 
-    //creating switch case so the right city will be selected once the randome Country has been determined
+    //creating switch case so the right city will be selected once the random Country has been determined
     switch (rec_country) {
 
         case "BRAZIL":
-            rec_city = "Rio de Janeir0";
+            rec_city = "Rio de Janeiro";
             console.log(rec_city);
             break;
 
@@ -63,8 +63,10 @@ $(document).ready(function(){
 
         var currentInfo = response.data.current_condition[0];
         var highLow = response.data.weather[0];
+        //calculating day of the week from date response....
+        // var days_of_the_week = [];
 
-        
+
         var currentDay = {
             currentTemp: currentInfo.temp_F,
             weatherDesc: currentInfo.weatherDesc[0].value,
@@ -72,6 +74,12 @@ $(document).ready(function(){
             low: highLow.mintempF,
             high: highLow.mintempF
         }
+
+        // var template = document.getElementById("navIndexWeather").innerHTML;
+        // var renderWeather = Handlebars.compile(template);
+        // document.getElementById("weatherInfo").innerHTML = renderWeather(currentDay);
+
+
         // console.log(response);
         // console.log("It works... " + response.data.current_condition[0]);
 
@@ -84,6 +92,16 @@ $(document).ready(function(){
 
         //display weather image on webpage..
         // document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
+        var img = document.createElement("img");
+        img.src = currentDay.weatherIconUrl;
+        var src = document.getElementById("icon");
+        src.appendChild(img);
+
+        var weatherToday = `<p> Weather Condition: ${currentDay.weatherDesc} <br>
+        Current Temp: ${currentDay.currentTemp}&#8457;<br>
+        Low ${currentDay.low}&#8457/ High ${currentDay.high}&#8457
+        </p>`
+        $("#weatherInfo").append(weatherToday);
 
 
         //                   ********** 5 Day Weather Forecast *********** 
@@ -104,7 +122,7 @@ $(document).ready(function(){
         console.log("Day 1 Weather Icon Url: " + dayOne.weatherIconUrl); //weather icon image for day 1
         console.log("/////////////////////");
 
-        //calculating day of the week from date response....
+
         var weekday = new Date(dayOne.date);
 
         var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
@@ -117,10 +135,26 @@ $(document).ready(function(){
         daysofWeek[6] = "Saturday";
 
         var new_weekday = daysofWeek[weekday.getDay()];
+        // days_of_the_week.push(new_weekday);
         console.log(new_weekday);
+        $("#top").prepend(new_weekday)
+;
+        var img = document.createElement("img");
+        img.src = DayOne.weatherIconUrl;
+        var src = document.getElementById("icon");
+        src.appendChild(img);
+
+        var weatherDayOne = `<p> Weather Condition: ${dayOne.weatherDesc} <br>
+        Low: ${dayOne.minTemp}&#8457;<br>
+        High: ${dayOne.maxTemp}&#8457
+        </p>`
+        $("#weatherInfo").append(weatherDayOne);
 
 
         //DAY TWO response data...
+        // var weekday2 = new DataCue(dayTwo.date);
+        // var new_weekday2 = daysofWeek[weekday2.getDay()];
+        // days_of_the_week.push(new_weekday2);
         var day2 = response.data.weather[2];
         var dayTwo = {
             date: day2.date,
@@ -137,6 +171,9 @@ $(document).ready(function(){
         console.log("/////////////////////");
 
         //DAY THREE response data...
+        // var weekday3 = new DataCue(dayThree.date);
+        // var new_weekday3 = daysofWeek[weekday3.getDay()];
+        // days_of_the_week.push(new_weekday3);
         var day3 = response.data.weather[3];
         var dayThree = {
             date: day3.date,
@@ -153,6 +190,9 @@ $(document).ready(function(){
         console.log("/////////////////////");
 
         //DAY FOUR response data...
+        // var weekday4 = new DataCue(dayFour.date);
+        // var new_weekday4 = daysofWeek[weekday4.getDay()];
+        // days_of_the_week.push(new_weekday4);
         var day4 = response.data.weather[4];
         var dayFour = {
             date: day4.date,
@@ -217,7 +257,7 @@ $(document).ready(function(){
 
 // });
 
-    
+
 
 
 
