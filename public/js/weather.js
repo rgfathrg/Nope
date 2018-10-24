@@ -76,6 +76,10 @@ $(document).ready(function () {
             high: highLow.mintempF
         }
 
+        // var template = document.getElementById("navIndexWeather").innerHTML;
+        // var renderWeather = Handlebars.compile(template);
+        // document.getElementById("weatherInfo").innerHTML = renderWeather(currentDay);
+
 
         // console.log(response);
         // console.log("It works... " + response.data.current_condition[0]);
@@ -89,6 +93,16 @@ $(document).ready(function () {
 
         //display weather image on webpage..
         // document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
+        var img = document.createElement("img");
+        img.src = currentDay.weatherIconUrl;
+        var src = document.getElementById("icon");
+        src.appendChild(img);
+
+        var weatherToday = `<p> Weather Condition: ${currentDay.weatherDesc} <br>
+        Current Temp: ${currentDay.currentTemp}&#8457;<br>
+        Low ${currentDay.low}&#8457/ High ${currentDay.high}&#8457
+        </p>`
+        $("#weatherInfo").append(weatherToday);
 
 
         //                   ********** 5 Day Weather Forecast *********** 
@@ -124,6 +138,19 @@ $(document).ready(function () {
         var new_weekday = daysofWeek[weekday.getDay()];
         // days_of_the_week.push(new_weekday);
         console.log(new_weekday);
+        $("#top").prepend(new_weekday)
+;
+        var img = document.createElement("img");
+        img.src = DayOne.weatherIconUrl;
+        var src = document.getElementById("icon");
+        src.appendChild(img);
+
+        var weatherDayOne = `<p> Weather Condition: ${dayOne.weatherDesc} <br>
+        Low: ${dayOne.minTemp}&#8457;<br>
+        High: ${dayOne.maxTemp}&#8457
+        </p>`
+        $("#weatherInfo").append(weatherDayOne);
+
 
         //DAY TWO response data...
         // var weekday2 = new DataCue(dayTwo.date);
