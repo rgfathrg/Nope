@@ -83,9 +83,13 @@ body{
 button{
     background-color: lightseagreen;
     color: white;
-  }
+}
 
 #survey-btn {
     width: 66%;
     margin: auto;
+}
+
+#addedComments {
+    margin-left: 17%;
 }

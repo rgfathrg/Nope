@@ -1,0 +1,82 @@
+
+#navIndexDestination {
+    padding: 2px;
+    background-color: whitesmoke;
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-size: 42px !important;
+    margin-bottom: 32px;
+    font-family: "Roboto Condensed",sans-serif;
+}
+#destination {
+    font-size: 85px;
+    letter-spacing: 14px;
+    color: #007bff;
+}
+#navIndexCarousel {
+    background-color: whitesmoke;
+    padding: 20px;
+}
+.navbar-brand {
+    letter-spacing: 2px;
+    color: bisque !important;
+    font-size: 52px;
+    text-shadow: 1.5px 1.5px 1.5px black;
+    font-style: italic;
+    font-weight: 800;
+}
+#destNavBar {
+    background-color: whitesmoke !important;
+    padding: 13px;
+}
+#navIndexWeather {
+    background-color: whitesmoke !important;
+    padding: 13px;
+}
+#navIndexCurrancy {
+    background-color: whitesmoke !important;
+    padding: 13px;
+}
+#navIndexPassVisa {
+    background-color: whitesmoke !important;
+    padding: 13px;
+}
+#navIndexFacts {
+    background-color: whitesmoke !important;
+    padding: 13px;
+}
+#navIndexAbout {
+    background-color: whitesmoke !important;
+    padding: 13px;
+}
+.contentHeaders {
+    font-size: 24px;
+    font-family: "Roboto Condensed",sans-serif;
+    text-align: center;
+    color: #007bff;
+}
+.exchBox {
+    width: 33%;
+}
+.nav-link {
+    font-size: 24px;
+    font-family: "Roboto Condensed",sans-serif;
+}
+#worldFacts {
+    padding: 0 20px;
+    font-family: "Roboto Condensed",sans-serif;
+}
+.nav-item {
+    font-family: "Roboto Condensed",sans-serif;
+}
+.center {
+    text-align: center;
+}
+#currencyCalc {
+    margin: auto;
+    display: block;
+}
+.exchBox {
+    margin: auto;
+}
