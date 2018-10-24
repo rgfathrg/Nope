@@ -46,14 +46,14 @@
         </div>
         <div class="form-group">
             <label for="passport">Do you prefer relaxing or exploring? </label>
-            <select class="form-control" id="passport">
+            <select class="form-control" id="survey-tempoPref">
                 <option>Relaxing</option>
                 <option>Exploring</option>
             </select>
         </div>
         <div class="form-group">
             <label for="passport">Do you prefer wine or beer?</label>
-            <select class="form-control" id="passport">
+            <select class="form-control" id="survey-alchoPref">
                 <option>Wine</option>
                 <option>Beer</option>
             </select>
@@ -90,7 +90,7 @@
         <label for="comments" id="addedComments">Additional comments?</label>
         <textarea class="form-control" id="comments" rows="3"></textarea>
     </div>
-    <button type="button" class="btn btn btn-lg btn-block" id="survey-btntest">Submit</button>
+    <button type="button" class="btn btn btn-lg btn-block" id="survey-btn">Submit</button>
 
     <!-- id="survey-btn" -->
 
@@ -104,38 +104,4 @@
         <title>Survey</title>
 </body>
 
-<script>
-
-    $("#survey-btntest").on("click", function(event) {
-        event.preventDefault();
-
-        var name = $("#name").val().trim();
-        var tempPref = $("#survey-weatherPref").val().trim();
-        var enviroPref = $("#survey-enviroPref").val().trim();
-
-
-
-        console.log(tempPref + name + enviroPref);
-    });
-    // $(“#submitButton”).on(“click”, function (event) {
-    // event.preventDefault();
- 
-    // var email = $(“#emailInput”).val().trim();
-    // var firstName = $(“#firstNameInput”).val().trim();
-    // var lastName = $(“#lastNameInput”).val().trim();
-    // var comments = $(“#commentsInput”).val().trim();
-    // var number = $(“#phoneNumber”).val().trim();
-    
-
-    function surveyRes (form) {
-        var arrytest = $("surveyFormData").serializeArray();
-        console.log(arrytest);
-
-        // var TestVar = form.inputname.value;
-        // console.log("You typed: " + TestVar);
-    }
-
-</script>
-
 </html>
-
