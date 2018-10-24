@@ -1,12 +1,12 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    
+
     var selectedCountry = localStorage.getItem("selected_country");
     var rec_country = selectedCountry;
     console.log("Random country " + rec_country + " successfully retrieved!");
     var rec_city = "";
 
-    //creating switch case so the right city will be selected once the randome Country has been determined
+    //creating switch case so the right city will be selected once the random Country has been determined
     switch (rec_country) {
 
         case "BRAZIL":
@@ -64,8 +64,10 @@ $(document).ready(function(){
 
         var currentInfo = response.data.current_condition[0];
         var highLow = response.data.weather[0];
+        //calculating day of the week from date response....
+        // var days_of_the_week = [];
 
-        
+
         var currentDay = {
             currentTemp: currentInfo.temp_F,
             weatherDesc: currentInfo.weatherDesc[0].value,
@@ -107,8 +109,7 @@ $(document).ready(function(){
         console.log("Day 1 Weather Icon Url: " + dayOne.weatherIconUrl); //weather icon image for day 1
         console.log("/////////////////////");
 
-        //calculating day of the week from date response....
-        var days_of_the_week = [];
+
         var weekday = new Date(dayOne.date);
 
         var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
@@ -121,10 +122,9 @@ $(document).ready(function(){
         daysofWeek[6] = "Saturday";
 
         var new_weekday = daysofWeek[weekday.getDay()];
-        days_of_the_week.push(new_weekday);
+        // days_of_the_week.push(new_weekday);
         console.log(new_weekday);
 
-        
         //DAY TWO response data...
         // var weekday2 = new DataCue(dayTwo.date);
         // var new_weekday2 = daysofWeek[weekday2.getDay()];
@@ -231,7 +231,7 @@ $(document).ready(function(){
 
 // });
 
-    
+
 
 
 
