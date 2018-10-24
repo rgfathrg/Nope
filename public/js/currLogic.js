@@ -41,7 +41,7 @@ $("#currencyCalc").on("click", function(event) {
   var convert = usd * rate;
   $("#fcurr").val(convert.toFixed(2));
 });
-$("#forCur").on("click", function(event) {
+$("#frCurrCalc").on("click", function(event) {
   event.preventDefault();
   var fc = $("#fcurr")
     .val()

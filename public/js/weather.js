@@ -92,12 +92,14 @@ $(document).ready(function () {
 
         //display weather image on webpage..
         // document.getElementById("icon").setAttribute("src", currentDay.weatherIconUrl);
-        var img = document.createElement("img");
-        img.src = currentDay.weatherIconUrl;
-        var src = document.getElementById("icon");
-        src.appendChild(img);
+        // var img = document.createElement("img");
+        // img.src = currentDay.weatherIconUrl;
+        // var src = document.getElementById("icon");
+        // src.appendChild(img);
 
-        var weatherToday = `<p> Weather Condition: ${currentDay.weatherDesc} <br>
+        var weatherToday = `<p> 
+        <img src=${currentDay.weatherIconUrl}><br>
+        Weather Condition: ${currentDay.weatherDesc} <br>
         Current Temp: ${currentDay.currentTemp}&#8457;<br>
         Low ${currentDay.low}&#8457/ High ${currentDay.high}&#8457
         </p>`
@@ -139,12 +141,14 @@ $(document).ready(function () {
         console.log(new_weekday);
         $("#top").prepend(new_weekday)
 ;
-        var img = document.createElement("img");
-        img.src = DayOne.weatherIconUrl;
-        var src = document.getElementById("icon");
-        src.appendChild(img);
+        // var img = document.createElement("img");
+        // img.src = dayOne.weatherIconUrl;
+        // var src = document.getElementById("icon");
+        // src.appendChild(img);
 
-        var weatherDayOne = `<p> Weather Condition: ${dayOne.weatherDesc} <br>
+        var weatherDayOne = `<h1>${new_weekday}</h1><p> 
+        <img src=${dayOne.weatherIconUrl}><br>
+        Weather Condition: ${dayOne.weatherDesc} <br>
         Low: ${dayOne.minTemp}&#8457;<br>
         High: ${dayOne.maxTemp}&#8457
         </p>`

@@ -78,18 +78,6 @@
                     </a>
                 </div>
             </div>
-
-            {{!-- <div class="jumbotron align-items-center" id="navIndexWeather">
-                <p class="contentHeaders">CURRENT WEATHER</p>
-                <div id="icon"></div>
-                {{#each currentDay}} 
-                <p>{{ weatherIconUrl }}</p>
-                <p>Current Temperature: {{ currentTemp }}&#8457;</p>
-                <p>{{ weatherDesc }}</p>
-                <p>Low {{ low }}&#8457; / High {{ high }}&#8457;</p>
-                <hr> {{/each}}
-                <hr>
-            </div> --}}
             
         <div class="jumbotron align-items-center weatherInfo" id="navIndexWeather">
             <div class="column1">
@@ -99,28 +87,15 @@
             {{!-- <div id="top"> --}}
             <p>Today's Weather</p>
             <div id="icon">
-                {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
             </div>
             <div id="weatherInfo">
 
             </div>
-           
-            <hr>
-            </div>
-
-            {{!-- <div class="column2">
-             <hr>
-            {{!-- <div id="top"> --}}
-            {{!-- <p>Today's Weather</p> --}}
-            <div id="icon">
-                {{!-- <img src="{{currentDay.weatherIconUrl}}"> --}}
-            {{!-- </div>
-            <div id="weatherInfo">
-
+            <div id="weatherDay1">
             </div>
            
             <hr>
-            </div> --}} 
+            </div>
         </div>
 
             <div class="jumbotron align-items-center" id="navIndexCurrancy">
@@ -142,7 +117,7 @@
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="fcurr">
                 </div>
                 <button class="btn btn-primary convert" type="submit" id="currencyCalc">Convert to {{currency}}</button>
-                <button class="btn btn-primary convert" type="submit" id="forCur">Convert to USD</button>
+                <button class="btn btn-primary convert" type="submit" id="frCurrCalc">Convert to USD</button>
 
 
             </div>
