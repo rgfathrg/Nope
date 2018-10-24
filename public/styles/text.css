@@ -78,6 +78,7 @@ body{
     text-transform: uppercase;
     color: lightseagreen;
     font-weight: bold;
+    background-color: whitesmoke !important;
 }
 
 button{
