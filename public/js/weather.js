@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
-   
-    var selectedCountry = localStorage.getItem("selected_country");
+
+   var selectedCountry = localStorage.getItem("selected_country");
+
     var rec_country = selectedCountry;
     console.log("Random country " + rec_country + " successfully retrieved!");
     var rec_city = "";
