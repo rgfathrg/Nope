@@ -98,7 +98,7 @@ $(document).ready(function () {
         var src = document.getElementById("icon");
         src.appendChild(img);
 
-        var weatherToday = `<p> Weather Condition: ${currentDay.weatherDesc} <br>
+        var weatherToday = `<p> <strong>${currentDay.weatherDesc} </strong><br>
         Current Temp: ${currentDay.currentTemp}&#8457;<br>
         Low ${currentDay.low}&#8457/ High ${currentDay.high}&#8457
         </p>`
@@ -145,7 +145,7 @@ $(document).ready(function () {
         var src = document.getElementById("icon");
         src.appendChild(img);
 
-        var weatherDayOne = `<p> Weather Condition: ${dayOne.weatherDesc} <br>
+        var weatherDayOne = `<p><strong>${dayOne.weatherDesc}</strong><br>
         Low: ${dayOne.minTemp}&#8457;<br>
         High: ${dayOne.maxTemp}&#8457
         </p>`
