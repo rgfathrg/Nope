@@ -25,18 +25,32 @@ $("#survey-btn").on("click", function (event) {
 
   if (tempPref === "Cold") {
     window.location.href = "/destination/ICELAND";
+    country = "ICELAND";
+    localStorage.setItem("selected_country", country);
   } else {
     if (enviroPref === "City") {
       if (alchoPref === "Wine") {
         window.location.href = "/destination/FRANCE";
+        country = "FRANCE";
+        localStorage.setItem("selected_country", country);
+
       } else {
         window.location.href = "/destination/BRAZIL";
+        country = "BRAZIL";
+        localStorage.setItem("selected_country", country);
+
       };
     } else {
       if (tempoPref === "Relaxing") {
         window.location.href = "/destination/PERU";
+        country = "PERU";
+        localStorage.setItem("selected_country", country);
+
       } else {
         window.location.href = "/destination/AUSTRALIA";
+        country = "AUSTRALIA";
+        localStorage.setItem("selected_country", country);
+        
       };
     };
   };
@@ -62,6 +76,7 @@ $("#currencyCalc").on("click", function (event) {
   var rate = $("#tarRate").text();
   var convert = usd * rate;
   $("#fcurr").val(convert.toFixed(2));
+
 });
 $("#frCurrCalc").on("click", function(event) {
   event.preventDefault();
@@ -72,3 +87,4 @@ $("#frCurrCalc").on("click", function(event) {
   var convert = fc / rate;
   $("#usdcurr").val(convert.toFixed(2));
 });
+
