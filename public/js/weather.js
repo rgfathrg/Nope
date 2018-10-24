@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
-
+   
     var selectedCountry = localStorage.getItem("selected_country");
     var rec_country = selectedCountry;
     console.log("Random country " + rec_country + " successfully retrieved!");
     var rec_city = "";
-
+    
     //creating switch case so the right city will be selected once the random Country has been determined
     switch (rec_country) {
 
