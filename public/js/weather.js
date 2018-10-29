@@ -111,7 +111,7 @@ $(document).ready(function () {
         //                   ********** 5 Day Weather Forecast *********** 
 
         //DAY ONE response data...
-        var day1 = response.data.weather[1];
+        var day1 = response.data.weather[2];
         var dayOne = {
             date: day1.date,
             minTemp: day1.mintempF,
@@ -128,13 +128,14 @@ $(document).ready(function () {
 
 
         var weekday = new Date(dayOne.date);
+        console.log("Weekday number " + weekday); 
 
         var daysofWeek = new Array(7); //Sunday - Saturday : 0-6
         daysofWeek[0] = "Sunday";
         daysofWeek[1] = "Monday";
         daysofWeek[2] = "Tuesday";
         daysofWeek[3] = "Wednesday";
-        daysofWeek[4] = "Thursdady";
+        daysofWeek[4] = "Thursday";
         daysofWeek[5] = "Friday";
         daysofWeek[6] = "Saturday";
 
@@ -162,7 +163,7 @@ $(document).ready(function () {
         // var weekday2 = new DataCue(dayTwo.date);
         // var new_weekday2 = daysofWeek[weekday2.getDay()];
         // days_of_the_week.push(new_weekday2);
-        var day2 = response.data.weather[2];
+        var day2 = response.data.weather[3];
         var dayTwo = {
             date: day2.date,
             minTemp: day2.mintempF,
@@ -202,7 +203,7 @@ $(document).ready(function () {
         // var weekday3 = new DataCue(dayThree.date);
         // var new_weekday3 = daysofWeek[weekday3.getDay()];
         // days_of_the_week.push(new_weekday3);
-        var day3 = response.data.weather[3];
+        var day3 = response.data.weather[4];
         var dayThree = {
             date: day3.date,
             minTemp: day3.mintempF,
@@ -242,7 +243,7 @@ $(document).ready(function () {
         // var weekday4 = new DataCue(dayFour.date);
         // var new_weekday4 = daysofWeek[weekday4.getDay()];
         // days_of_the_week.push(new_weekday4);
-        var day4 = response.data.weather[4];
+        var day4 = response.data.weather[5];
         var dayFour = {
             date: day4.date,
             minTemp: day4.mintempF,
@@ -279,7 +280,7 @@ $(document).ready(function () {
         $("#weatherInfo").append(weatherDayFour);
 
         //DAY FIVE response data...
-        var day5 = response.data.weather[5];
+        var day5 = response.data.weather[6];
         var dayFive = {
             date: day5.date,
             minTemp: day5.mintempF,
